@@ -1,3 +1,2772 @@
+محادثة مع Gemini
+بسوي موقع اكتروني يكون اساله لغتي كذا
+
+فكرة ممتازة ومفيدة جداً للطلاب والمعلمين! لإنشاء موقع أسئلة لمادة «لغتي» (سواء للمرحلة الابتدائية، المتوسطة، أو غيرها)، إليك خطة بسيطة توضح لك كيف تبدأ والخيارات المتاحة أمامك:
+
+1. حدد فكرة الموقع وطريقة عمله
+قبل البدء بالبرمجة أو التصميم، حدد شكل الموقع:
+
+هل هو بنك أسئلة؟ (عرض أسئلة مع إجاباتها للشرح والمذاكرة).
+
+اختبارات تفاعلية؟ (يختار الطالب الإجابة، ويظهر له الناتج فوراً مع النتيجة النهائية ومؤقت زمني).
+
+تقسيم المحتوى: حسب الصفوف (مثلاً: رابع، خامس، سادس)، ثم حسب الوحدات أو المهارات (نحو وإملاء، فهم مقروء، نصوص).
+
+2. كيف تصنع الموقع؟ (اختر الطريقة الأنسب لك)
+الخيار الأول: بدون برمجة (أسهل وأسرع حل)
+إذا لم تكن لديك خلفية برمجية، يمكنك استخدام منصات جاهزة:
+
+ووردبريس (WordPress):
+
+الخيار الأقوى والأكثر احترافية.
+
+يمكنك شراء استضافة ودومين، واستخدام إضافات مخصصة للاختبارات مثل: Quiz and Survey Master أو WP Quiz.
+
+منصات جاهزة مجانية أو شبه مجانية:
+
+Google Sites: سهل جداً وتستطيع تضمين اختبارات من Google Forms داخله بشكل مرتب حسب الصفوف.
+
+Notion + Super.so: لإنشاء موقع بسيط كمرجع للأسئلة والملخصات.
+
+الخيار الثاني: بالبرمجة الخاصة (لو عندك خبرة أو تريد تعلم التطوير)
+الواجهة الأمامية (Frontend):
+
+HTML / CSS / JavaScript: تكفي لعمل صفحة اختبارات تفاعلية جذابة وسريعة.
+
+أو استخدام مكتبات مثل React أو Vue.js لتجربة مستخدم ممتازة.
+
+قاعدة البيانات (Backend):
+
+Firebase أو Supabase: لحفظ الأسئلة، حسابات المستخدمين، ودرجات الطلاب بسهولة وبدون تعقيد.
+
+3. شكل هيكل الأسئلة (بيانات السؤال)
+لكل سؤال في مادة لغتي، تحتاج لتجهيز البيانات بالشكل التالي (سواء في ملف إكسل أو قاعدة بيانات):
+
+نص السؤال: (مثال: ما إعراب كلمة "العلمُ" في جملة: العلمُ نورٌ؟)
+
+الخيارات: [أ) فاعل، ب) مبتدأ، ج) خبر، د) مفعول به]
+
+الإجابة الصحيحة: ب
+
+الشرح/التوضيح: (يظهر للطالب بعد الحل لتوضيح القاعدة).
+
+التصنيف: (الصف، الوحدة، المهارة: نحو / إملاء / بلاغة).
+
+4. أفكار تجعل موقعك مميزاً
+نظام النقاط والمكافآت (Gamification): تشجيع الطلاب بالحصول على أوسمة ومراتب عند إنهاء الاختبارات.
+
+شهادة نجاح: إمكانية تحميل شهادة تفوق تلقائية للدرجات العالية.
+
+بنك أسئلة إملائية صوتية: يضغط الطالب على زر للاستماع إلى كلمة ثم يكتبها ليختبر مهارة الإملاء.
+
+إذا أردت المساعدة في خطوة محددة، أخبرني:
+
+هل تريد كود جاهز (HTML/CSS/JS) لصفحة اختبار أسئلة تفاعلية؟
+
+أو تفضل عمله عبر منصة جاهزة (مثل ووردبريس أو مواقع قوقل) وتريد دليلاً خطوة بخطوة؟
+
+github
+
+إذا كنت تقصد استضافة الموقع البرمجي على GitHub ونشره مجاناً، فهذا خيار ممتاز وعملي جداً عن طريق خدمة GitHub Pages.
+
+إليك كيف تسوي موقع أسئلة تفاعلي لمادة «لغتي» وترفعه على غيت هاب في دقائق:
+
+1. كود صفحة الاختبار (ملف واحد يجمع HTML + CSS + JS)
+أنشئ ملفاً باسم index.html وضع بداخله هذا الكود الجاهز (يحتوي على نموذج لسؤال تفاعلي مع إظهار النتيجة):
+
+HTML
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>اختبارات لغتي التفاعلية</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background-color: #f3f4f6;
+      margin: 0;
+      padding: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 80vh;
+    }
+    .quiz-card {
+      background: #ffffff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+      width: 100%;
+      max-width: 500px;
+    }
+    h2 { margin-top: 0; color: #1f2937; }
+    .question { font-size: 1.2rem; margin-bottom: 1.5rem; color: #111827; }
+    .btn-option {
+      display: block;
+      width: 100%;
+      padding: 0.8rem 1rem;
+      margin-bottom: 0.8rem;
+      border: 1px solid #d1d5db;
+      background: #f9fafb;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      text-align: right;
+      transition: all 0.2s ease;
+    }
+    .btn-option:hover { background: #e5e7eb; }
+    .result {
+      margin-top: 1.5rem;
+      padding: 1rem;
+      border-radius: 8px;
+      display: none;
+      font-weight: bold;
+    }
+    .correct { background: #def7ec; color: #03543f; }
+    .wrong { background: #fde8e8; color: #9b1c1c; }
+  </style>
+</head>
+<body>
+
+  <div class="quiz-card">
+    <h2>تحدي لغتي 📖</h2>
+    <div class="question" id="qText">ما إعراب كلمة (العِلْمُ) في جملة: «العِلْمُ نورٌ»؟</div>
+    
+    <button class="btn-option" onclick="checkAnswer(0)">أ) فاعل مرفوع</button>
+    <button class="btn-option" onclick="checkAnswer(1)">ب) مبتدأ مرفوع</button>
+    <button class="btn-option" onclick="checkAnswer(2)">ج) خبر مرفوع</button>
+    <button class="btn-option" onclick="checkAnswer(3)">د) مفعول به منصوب</button>
+
+    <div id="resultBox" class="result"></div>
+  </div>
+
+  <script>
+    const correctAnswer = 1; // الإجابة الصحيحة هي الخيار الثاني (ب)
+
+    function checkAnswer(index) {
+      const box = document.getElementById("resultBox");
+      box.style.display = "block";
+      
+      if (index === correctAnswer) {
+        box.className = "result correct";
+        box.innerHTML = "✅ إجابة صحيحة! «العلمُ» مبتدأ مرفوع وعلامة رفعه الضمة الظاهرة.";
+      } else {
+        box.className = "result wrong";
+        box.innerHTML = "❌ إجابة خاطئة. الإجابة الصحيحة هي: مبتدأ مرفوع.";
+      }
+    }
+  </script>
+
+</body>
+</html>
+2. خطوات نشر الموقع مجاناً على GitHub Pages
+سجل دخولك إلى GitHub.com.
+
+اضغط على زر New لإنشاء مستودع جديد (Repository).
+
+اختر اسماً له (مثلاً: lughati-quiz) واجعله Public ثم اضغط Create repository.
+
+اضغط على uploading an existing file وارفع ملف index.html.
+
+اضغط Commit changes لحفظ الملف.
+
+اذهب إلى تبويب Settings الخاص بالمستودع:
+
+اختر من القائمة الجانبية Pages.
+
+عند خيار Build and deployment > Branch، اختر main واضغط Save.
+
+بعد دقيقة أو دقيقتين، سيعطيك غيت هاب رابطاً مجانياً ومباشراً لموقعك بصيغة:
+https://<username>.github.io/lughati-quiz/
+
+إذا كنت تريد توسيع الكود ليعرض عدة أسئلة متتالية مع حساب النتيجة النهائية، أخبرني لأجهزها لك فوراً.
+
+ابي تسوي لي موقع اساله لغتي قوي للترفيه
+
+هذا كود كامل في ملف واحد (index.html) جاهز ومصمم بطابع حماسي وترفيهي، يحتوي على مؤقت زمني، نظام نقاط، أصوات تفاعلية (عبر Web Audio API بدون ملفات خارجية)، ومؤثرات حركية عند الإجابة.
+
+احفظ الكود باسم index.html وارفعه مباشرة إلى GitHub Pages:
+
+HTML
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تحدي لغتي الخارق ⚡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --accent: #38bdf8;
+      --accent-hover: #0ea5e9;
+      --success: #22c55e;
+      --danger: #ef4444;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Tajawal', sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #1e1b4b, var(--bg));
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem;
+    }
+
+    .container {
+      background: var(--card-bg);
+      border-radius: 24px;
+      padding: 2rem;
+      width: 100%;
+      max-width: 550px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 20px rgba(56, 189, 248, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Top Bar */
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .stat-badge {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    /* Progress & Timer */
+    .progress-track {
+      height: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50px;
+      margin-bottom: 1.5rem;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #38bdf8, #818cf8);
+      width: 100%;
+      transition: width 1s linear;
+    }
+
+    /* Question */
+    .question-box {
+      margin-bottom: 1.8rem;
+    }
+
+    .question-category {
+      color: var(--accent);
+      font-size: 0.9rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.4rem;
+    }
+
+    .question-title {
+      font-size: 1.4rem;
+      line-height: 1.5;
+      font-weight: 700;
+    }
+
+    /* Options */
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .btn-opt {
+      background: rgba(255, 255, 255, 0.04);
+      border: 2px solid rgba(255, 255, 255, 0.08);
+      color: var(--text);
+      padding: 1rem 1.2rem;
+      border-radius: 14px;
+      font-size: 1.05rem;
+      font-weight: bold;
+      cursor: pointer;
+      text-align: right;
+      transition: all 0.2s ease;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .btn-opt:hover:not(:disabled) {
+      background: rgba(56, 189, 248, 0.1);
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .btn-opt.correct {
+      background: rgba(34, 197, 94, 0.2) !important;
+      border-color: var(--success) !important;
+      color: #86efac;
+    }
+
+    .btn-opt.wrong {
+      background: rgba(239, 68, 68, 0.2) !important;
+      border-color: var(--danger) !important;
+      color: #fca5a5;
+    }
+
+    /* Feedback & Action */
+    .explanation {
+      margin-top: 1.2rem;
+      padding: 1rem;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      background: rgba(255, 255, 255, 0.05);
+      display: none;
+    }
+
+    .btn-next {
+      width: 100%;
+      background: linear-gradient(135deg, #38bdf8, #6366f1);
+      border: none;
+      color: white;
+      padding: 1rem;
+      border-radius: 14px;
+      font-size: 1.1rem;
+      font-weight: 900;
+      margin-top: 1.2rem;
+      cursor: pointer;
+      display: none;
+      box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+      transition: transform 0.2s ease;
+    }
+
+    .btn-next:hover {
+      transform: scale(1.02);
+    }
+
+    /* Screen Transitions */
+    .screen {
+      display: none;
+    }
+
+    .screen.active {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-btn {
+      width: 100%;
+      background: linear-gradient(135deg, #38bdf8, #6366f1);
+      border: none;
+      color: white;
+      padding: 1rem;
+      border-radius: 14px;
+      font-size: 1.2rem;
+      font-weight: 900;
+      cursor: pointer;
+      margin-top: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Start Screen -->
+    <div id="startScreen" class="screen active" style="text-align: center;">
+      <h1 style="font-size: 2.2rem; margin-bottom: 0.5rem;">🔥 تحدي لغتي الأسطوري</h1>
+      <p style="color: var(--text-muted); margin-bottom: 1.5rem;">اختبر معلوماتك في الإعراب، الإملاء، وألغاز البلاغة قبل نفاد الوقت!</p>
+      <div style="background: rgba(255,255,255,0.03); padding: 1.2rem; border-radius: 16px; margin-bottom: 1.5rem; text-align: right;">
+        <p>⚡ <b>المؤقت:</b> 15 ثانية لكل سؤال</p>
+        <p>🎯 <b>النقاط:</b> كل إجابة سريعة تعطيك نقاطاً أعلى</p>
+        <p>🏆 <b>الهدف:</b> جمع أعلى رقم قياسي</p>
+      </div>
+      <button class="hero-btn" onclick="startQuiz()">انطلاق 🚀</button>
+    </div>
+
+    <!-- Quiz Screen -->
+    <div id="quizScreen" class="screen">
+      <div class="top-bar">
+        <div class="stat-badge">⏱️ <span id="timerText">15</span>ث</div>
+        <div class="stat-badge">⭐ النقاط: <span id="scoreText">0</span></div>
+        <div class="stat-badge">السؤال <span id="qIndex">1</span>/5</div>
+      </div>
+
+      <div class="progress-track">
+        <div id="timerBar" class="progress-fill"></div>
+      </div>
+
+      <div class="question-box">
+        <div id="qCat" class="question-category">نحو وإعراب</div>
+        <div id="qTitle" class="question-title">تحميل السؤال...</div>
+      </div>
+
+      <div id="optionsContainer" class="options-grid"></div>
+
+      <div id="explainBox" class="explanation"></div>
+      <button id="nextBtn" class="btn-next" onclick="nextQuestion()">التالي ➔</button>
+    </div>
+
+    <!-- Result Screen -->
+    <div id="endScreen" class="screen" style="text-align: center;">
+      <h2 style="font-size: 2rem; margin-bottom: 0.5rem;" id="endTitle">مبروك! 🎉</h2>
+      <p style="color: var(--text-muted); margin-bottom: 1.5rem;">لقد أنهيت التحدي بنجاح</p>
+      <div style="font-size: 3.5rem; font-weight: 900; color: var(--accent); margin-bottom: 1rem;" id="finalScore">0</div>
+      <p id="endMessage" style="font-size: 1.1rem; margin-bottom: 2rem;"></p>
+      <button class="hero-btn" onclick="restartQuiz()">إعادة التحدي 🔄</button>
+    </div>
+  </div>
+
+  <script>
+    // Audio FX using Web Audio API
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    function playTone(freq, type, duration) {
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = type;
+      osc.frequency.value = freq;
+      gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + duration);
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start();
+      osc.stop(audioCtx.currentTime + duration);
+    }
+
+    const playCorrect = () => { playTone(587.33, 'sine', 0.1); setTimeout(() => playTone(880, 'sine', 0.2), 100); };
+    const playWrong = () => { playTone(220, 'triangle', 0.2); setTimeout(() => playTone(164.81, 'triangle', 0.3), 150); };
+
+    // Questions Data
+    const questions = [
+      {
+        cat: "إملاء وذكاء",
+        q: "أيّ الكلمات التالية كُتبت فيها الهمزة بشكل صحيح؟",
+        options: ["مسؤلية", "مسؤولية", "مسئولية", "مسؤالية"],
+        ans: 1,
+        exp: "تُكتب 'مسؤولية' بالهمزة على واو لأن الهمزة مضمومة وما قبلها ساكن، والضم أقوى من السكون."
+      },
+      {
+        cat: "نحو وإعراب",
+        q: "ما إعراب كلمة «أخوك» في: «إنّ أخاك ذو علمٍ»؟",
+        options: ["اسم إنّ منصوب بالألف", "خبر إنّ مرفوع بالواو", "مبتدأ مرفوع بالضمة", "فاعل مرفوع بالواو"],
+        ans: 0,
+        exp: "«أخاك» اسم إنّ منصوب وعلامة نصبه الألف لأنه من الأسماء الخمسة."
+      },
+      {
+        cat: "ألغاز نحوية",
+        q: "«لا تنهَ عن خُلقٍ وتأتيَ مِثْلَهُ».. الواو هنا هي واو:",
+        options: ["العطف", "الحال", "المعية", "القسم"],
+        ans: 2,
+        exp: "هي واو المعية؛ لذا نُصب الفعل المضارع (تأتيَ) بعدها بأن مضمرة."
+      },
+      {
+        cat: "تراكيب لغوية",
+        q: "الجمع الصحيح لكلمة «فَم» هو:",
+        options: ["أفمام", "فموم", "أفواه", "فيَم"],
+        ans: 2,
+        exp: "أصل كلمة فم هو (فوه)، لذلك تُرد إلى أصلها عند الجمع فتصبح «أفواه»."
+      },
+      {
+        cat: "فنون وبلاغة",
+        q: "الجملة التي تشتمل على أسلوب تعجب قياسي هي:",
+        options: ["سبحان الله!", "ما أجملَ الصدقَ!", "يا لروعة البحر!", "كيف فعلت هذا؟"],
+        ans: 1,
+        exp: "صيغة (ما أفعَلَ) مثل «ما أجملَ» هي إحدى صيغ التعجب القياسية."
+      }
+    ];
+
+    let currentIdx = 0;
+    let score = 0;
+    let timeLeft = 15;
+    let timerInterval = null;
+    const maxTime = 15;
+
+    function showScreen(id) {
+      document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+
+    function startQuiz() {
+      currentIdx = 0;
+      score = 0;
+      showScreen('quizScreen');
+      loadQuestion();
+    }
+
+    function loadQuestion() {
+      clearInterval(timerInterval);
+      timeLeft = maxTime;
+      updateTimerUI();
+
+      const q = questions[currentIdx];
+      document.getElementById('qIndex').innerText = currentIdx + 1;
+      document.getElementById('scoreText').innerText = score;
+      document.getElementById('qCat').innerText = q.cat;
+      document.getElementById('qTitle').innerText = q.q;
+      document.getElementById('explainBox').style.display = 'none';
+      document.getElementById('nextBtn').style.display = 'none';
+
+      const optBox = document.getElementById('optionsContainer');
+      optBox.innerHTML = '';
+
+      q.options.forEach((opt, i) => {
+        const btn = document.createElement('button');
+        btn.className = 'btn-opt';
+        btn.innerHTML = `<span>${opt}</span>`;
+        btn.onclick = () => selectAnswer(i);
+        optBox.appendChild(btn);
+      });
+
+      // Start timer
+      timerInterval = setInterval(() => {
+        timeLeft--;
+        updateTimerUI();
+        if (timeLeft <= 0) {
+          clearInterval(timerInterval);
+          timeOut();
+        }
+      }, 1000);
+    }
+
+    function updateTimerUI() {
+      document.getElementById('timerText').innerText = timeLeft;
+      const pct = (timeLeft / maxTime) * 100;
+      document.getElementById('timerBar').style.width = pct + '%';
+    }
+
+    function selectAnswer(selected) {
+      clearInterval(timerInterval);
+      const q = questions[currentIdx];
+      const buttons = document.querySelectorAll('.btn-opt');
+      buttons.forEach(b => b.disabled = true);
+
+      const expBox = document.getElementById('explainBox');
+      expBox.style.display = 'block';
+
+      if (selected === q.ans) {
+        buttons[selected].classList.add('correct');
+        playCorrect();
+        const earned = 100 + (timeLeft * 10);
+        score += earned;
+        document.getElementById('scoreText').innerText = score;
+        expBox.innerHTML = `✨ <b>إجابة خارقة!</b> (+${earned} نقطة)<br>${q.exp}`;
+      } else {
+        if (selected !== -1) buttons[selected].classList.add('wrong');
+        buttons[q.ans].classList.add('correct');
+        playWrong();
+        expBox.innerHTML = `❌ <b>أوبس!</b><br>${q.exp}`;
+      }
+
+      document.getElementById('nextBtn').style.display = 'block';
+    }
+
+    function timeOut() {
+      selectAnswer(-1);
+      document.getElementById('explainBox').innerHTML = `⏰ <b>انتهى الوقت!</b><br>${questions[currentIdx].exp}`;
+    }
+
+    function nextQuestion() {
+      currentIdx++;
+      if (currentIdx < questions.length) {
+        loadQuestion();
+      } else {
+        endQuiz();
+      }
+    }
+
+    function endQuiz() {
+      showScreen('endScreen');
+      document.getElementById('finalScore').innerText = score;
+      let msg = "";
+      if (score > 900) msg = "👑 مستواك: سيبويه زمانك! لغتك العربية لا يُعلى عليها.";
+      else if (score > 500) msg = "⚡ مستواك: متمكن جداً ولديك حس لغوي قوي!";
+      else msg = "📚 مستواك: بداية جيدة، تحتاج إلى القليل من المراجعة وتصبح أسطورة!";
+      document.getElementById('endMessage').innerText = msg;
+    }
+
+    function restartQuiz() {
+      startQuiz();
+    }
+  </script>
+</body>
+</html>
+كيف تعدل الأسئلة أو تضيف عليها؟
+توجه مباشرة إلى مصفوفة questions داخل الكود (حوالي السطر 187) ويمكنك إضافة أي سؤال جديد بهذا الشكل:
+
+JavaScript
+{
+  cat: "المهارة (نحو / إملاء)",
+  q: "نص السؤال هنا؟",
+  options: ["خيار 1", "خيار 2", "خيار 3", "خيار 4"],
+  ans: 0, // رقم الخيار الصحيح (يبدأ الترقيم من 0)
+  exp: "شرح يظهر للطالب يوضح سبب الإجابة"
+}
+إعداداتك الحالية في الصورة ممتازة وجاهزة تماماً. اتبع الخطوات التالية لإكمال الرفع:
+
+اضغط مباشرة على الزر الأخضر بالأسفل: Create repository.
+
+في الصفحة الجديدة التي ستفتح لك، ابحث عن عبارة:
+
+Get started by creating a new file or uploading an existing file.
+
+اضغط على كلمة uploading an existing file.
+
+اسحب ملف index.html وأفلته في المربع، أو اضغط choose your files لاختياره من جهازك.
+
+انزل لأسفل الصفحة واضغط على الزر الأخضر Commit changes.
+
+تفعيل رابط الموقع (GitHub Pages):
+
+ادخل على تبويب Settings (أعلى الصفحة من شريط التبويبات).
+
+اختر من القائمة الجانبية اليسرى خيار Pages.
+
+تحت قسم Branch:
+
+غيّر القائمة من None إلى main.
+
+اضغط Save.
+
+انتظر دقيقة إلى دقيقتين، وسيظهر لك رابط موقعك في أعلى الصفحة باللون الأخضر ويكون جاهزاً للمشاركة والتجربة.
+
+سوي كل شي في الملف و ارسلي كامل
+
+Your HTML file is ready:
+
+رمز HTML
+index
+ HTML 
+طريقة استخدامه فوراً مع GitHub:
+حمّل ملف index.html من الزر أعلاه إلى جهازك.
+
+في صفحة المستودع التي كنت فيها (kai):
+
+اضغط على Create repository باللون الأخضر.
+
+اختر uploading an existing file.
+
+اسحب ملف index.html وأفلته هناك، ثم اضغط Commit changes.
+
+اذهب إلى Settings > Pages:
+
+عند خيار Branch، اختر main واضغط Save.
+
+انتظر دقيقة وستجد الرابط المباشر للموقع جاهزاً وتستطيع إرساله لأي شخص لتحديه.
+
+الملف مرفوع وجاهز تماماً، تبقت خطوتان فقط لتشغيل الموقع:
+
+اضغط على الزر الأخضر Commit changes الظاهر في شاشتك.
+
+بعد حفظ الملف، اتبع الخطوات التالية لتفعيل الرابط:
+
+ادخل على Settings من التبويبات العلوية في نفس الصفحة.
+
+اختر Pages من القائمة الجانبية اليسرى.
+
+تحت عنوان Branch، غيّر الاختيار إلى main ثم اضغط Save.
+
+خلال دقيقة واحدة سيظهر لك رابط موقعك المباشر في نفس الصفحة لتفتحه وتجرب التحدي فوراً.
+
+الموقع الآن قيد البناء والنشر بنجاح كما هو موضح بالرسالة:
+
+Your GitHub Pages site is currently being built from the main branch.
+
+كل ما عليك فعله:
+
+انتظر من دقيقة إلى دقيقتين فقط.
+
+حدّث الصفحة (Refresh / F5).
+
+سيظهر لك إشعار في الأعلى باللون الأخضر يحتوي على رابط موقعك:
+[https://kaisxb.github.io/kai/](https://kaisxb.github.io/kai/)
+
+اضغط على الرابط ومبروك، سيعمل معك التحدي مباشرة!
+
+سوي لي كود عباره عن ملف شخصي خاص فيني
+
+صممت لك صفحة ملف شخصي (Portfolio / Linktree Card) عصرية بتصميم داكن وفخم (Dark Mode مع Glassmorphism)، متناسقة بالكامل مع الجوال وشاشات الكمبيوتر.
+
+الملف جاهز للتحميل:
+[file-tag: code-generated-file-6de5ea45-39ea-424f-a994-101988db62db]
+
+الكود كاملاً للمعاينة أو التعديل:
+HTML
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الملف الشخصي | عصام</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: rgba(22, 30, 49, 0.7);
+      --primary: #38bdf8;
+      --accent: #818cf8;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --border: rgba(255, 255, 255, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Tajawal', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(129, 140, 248, 0.15) 0px, transparent 50%);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem 1rem;
+    }
+
+    .profile-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      width: 100%;
+      max-width: 520px;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 30px rgba(56, 189, 248, 0.1);
+      position: relative;
+      overflow: hidden;
+      animation: slideUp 0.6s ease-out;
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .avatar-wrapper {
+      position: relative;
+      width: 110px;
+      height: 110px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .avatar-circle {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #38bdf8, #6366f1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      font-weight: 900;
+      color: #fff;
+      box-shadow: 0 10px 25px rgba(56, 189, 248, 0.35);
+      border: 3px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .status-dot {
+      width: 18px;
+      height: 18px;
+      background: #22c55e;
+      border: 3px solid #0f172a;
+      border-radius: 50%;
+      position: absolute;
+      bottom: 4px;
+      left: 6px;
+    }
+
+    .profile-info {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .profile-name {
+      font-size: 1.8rem;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      margin-bottom: 0.3rem;
+    }
+
+    .profile-handle {
+      color: var(--primary);
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      direction: ltr;
+      display: inline-block;
+    }
+
+    .profile-bio {
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .section-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .tags-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .tag {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      padding: 0.45rem 0.9rem;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      color: #e2e8f0;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.2s ease;
+    }
+
+    .tag:hover {
+      background: rgba(56, 189, 248, 0.12);
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .links-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .link-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 1.2rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 700;
+      transition: all 0.2s ease;
+    }
+
+    .link-item:hover {
+      background: linear-gradient(90deg, rgba(56, 189, 248, 0.15), rgba(99, 102, 241, 0.15));
+      border-color: rgba(56, 189, 248, 0.4);
+      transform: scale(1.02);
+    }
+
+    .link-left {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .arrow {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      transition: transform 0.2s ease;
+    }
+
+    .link-item:hover .arrow {
+      transform: translateX(-4px);
+      color: var(--primary);
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="profile-card">
+    <!-- الصورة الرمزية ومؤشر الحالة -->
+    <div class="avatar-wrapper">
+      <div class="avatar-circle">ع</div>
+      <div class="status-dot"></div>
+    </div>
+
+    <!-- المعلومات الأساسية -->
+    <div class="profile-info">
+      <h1 class="profile-name">عصام</h1>
+      <span class="profile-handle">@kaisxb</span>
+      <p class="profile-bio">شغوف بعالم البرمجة، التصميم، وتطوير الويب وصناعة المشاريع والتحديات التفاعلية 🚀</p>
+    </div>
+
+    <!-- المهارات والاهتمامات -->
+    <div class="section-title">💡 الاهتمامات والمهارات</div>
+    <div class="tags-container">
+      <span class="tag">💻 تطوير الويب</span>
+      <span class="tag">🎨 تصميم واجهات ومتاجر</span>
+      <span class="tag">🎮 ألعاب وتحديات</span>
+      <span class="tag">⚡ GitHub Pages</span>
+    </div>
+
+    <!-- الروابط والمشاريع -->
+    <div class="section-title">🔗 روابط ومشاريع</div>
+    <div class="links-list">
+      <a href="https://github.com/kaisxb" target="_blank" class="link-item">
+        <div class="link-left">
+          <span>🐙</span>
+          <span>حسابي على GitHub</span>
+        </div>
+        <span class="arrow">←</span>
+      </a>
+
+      <a href="https://kaisxb.github.io/kai/" target="_blank" class="link-item">
+        <div class="link-left">
+          <span>🔥</span>
+          <span>تحدي لغتي الأسطوري</span>
+        </div>
+        <span class="arrow">←</span>
+      </a>
+    </div>
+
+    <div class="footer">
+      تم التصميم والتطوير بكل شغف ✨
+    </div>
+  </div>
+
+</body>
+</html>
+كيفية رفعه:
+إذا أردت أن يكون في مستودع جديد لوحده (مثلاً باسم profile أو اسم مستخدمك kaisxb.github.io): سمّ الملف index.html وارفعه بنفس الطريقة السابقة ليعمل الرابط مباشرة.
+
+أو يمكنك إضافته داخل نفس المستودع السابق باسم profile.html وفتحه عبر الرابط: [https://kaisxb.github.io/kai/profile.html](https://kaisxb.github.io/kai/profile.html).
+
+رسالة 404 File not found تعني أحد أمرين بسيطين: إما أن عملية النشر الأولى لم تنتهِ بعد، أو أن اسم الملف المرفوع ليس index.html بحروف صغيرة تماماً.
+
+خطوات الحل السريع:
+
+تأكد من اكتمال النشر (Deployment):
+
+ارجع إلى صفحة المستودع kai على GitHub.
+
+اضغط على تبويب Actions من الشريط العلوي.
+
+ستجد مهمة باسم pages build and deployment؛ انتظر حتى تظهر بجانبها دائرة خضراء (علامة صح ✅) بدلاً من الدائرة الصفراء المتحركة.
+
+تأكد من اسم الملف:
+
+افتح تبويب Code وتأكد أن اسم الملف الظاهر هو index.html (بحروف صغيرة وبدون أي أحرف كبيرة مثل Index.html أو اسم آخر).
+
+تجاوز ذاكرة التخزين المؤقت (Cache):
+
+افتح الرابط في نافذة تصفح متخفٍ (Incognito Window) أو اضغط Ctrl + F5 لتحديث الصفحة بالكامل.
+
+الخطأ الأحمر (Failed to deploy) هو سبب ظهور صفحة 404، وغالباً يحدث لأن الحساب جديد ويحتاج لتأكيد البريد الإلكتروني، أو بسبب تعليق في نظام بناء Jekyll التلقائي.
+
+خطوات الحل المضمونة:
+
+تأكيد البريد الإلكتروني (السبب الأكثر شيوعاً):
+
+افتح بريدك الإلكتروني المسجل به حساب GitHub.
+
+تأكد من الضغط على رابط التفعيل (Verify email address)، لأن GitHub يمنع نشر الصفحات إذا لم يكن الإيميل مؤكداً.
+
+تعطيل Jekyll بإضافة ملف فارغ:
+
+ادخل على تبويب Code في المستودع.
+
+اضغط على Add file ثم Create new file.
+
+في خانة اسم الملف، اكتب حرفياً: .nojekyll (بنقطة في البداية).
+
+انزل للأسفل واضغط Commit changes.
+
+هذا الملف يخبر GitHub بتشغيل ملفات الـ HTML والـ CSS مباشرة دون فحص أو أخطاء بناء.
+
+معرفة سبب الخطأ بالتحديد:
+
+اضغط على كلمة Actions في الشريط العلوي الأيسر، ثم اضغط على المهمة الحمراء لمعرفة السطر المسبب للفشل إن استمرت المشكلة.
+
+ضبط ملف ثاني مره و ارسلي
+
+تم تجهيز الملف من جديد بالكامل وبصيغة خفيفة ومباشرة ليعمل دون أي أخطاء في الرفع:
+
+حمّل الملف الجاهز:
+[file-tag: code-generated-file-a040bafb-a61b-44bb-81ae-3ff8ffac0f1e]
+
+خطوات رفع الملف وحل مشكلة الفشل السابقة:
+
+تأكيد البريد الإلكتروني (ضروري جداً):
+
+افتح بريدك الإلكتروني وابحث عن رسالة من GitHub.
+
+اضغط على زر Verify email address (إذا لم توثق الحساب لن يسمح لك بالنشر وسيعطي دائماً علامة ❌ الحمراء).
+
+رفع الملف الجديد:
+
+افتح المستودع kai على GitHub.
+
+اضغط على Add file ثم Upload files.
+
+اسحب ملف index.html الذي حمّلته الآن وأفلته.
+
+انزل للأسفل واضغط الزر الأخضر Commit changes.
+
+إعادة تشغيل النشر تلقائياً:
+
+توجه إلى تبويب Actions من الشريط العلوي.
+
+ستلاحظ بدء عملية جديدة اسمها pages-build-deployment؛ انتظر حوالي 30 إلى 60 ثانية حتى تتحول الدائرة إلى علامة صح خضراء (✅).
+
+بعدها افتح رابط موقعك المباشر:
+[https://kaisxb.github.io/kai/](https://kaisxb.github.io/kai/)
+
+سوي لي كود ملف تعرفيني عني يكون مصمم بشكل خرافي
+
+صممت لك بطاقة ملف شخصي احترافية (Bento / Modern Dark Portfolio) مع خلفيات متوهجة متحركة، زجاج ضبابي (Glassmorphism)، وهالة محيطية تدور حول الصورة الرمزية:
+
+الملف جاهز للتحميل المباشر:
+
+رمز HTML
+profile
+ HTML 
+كود الصفحة بالكامل:
+
+HTML
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>عصام | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #070913;
+      --card-bg: rgba(17, 24, 39, 0.65);
+      --primary: #38bdf8;
+      --secondary: #818cf8;
+      --accent: #c084fc;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --border: rgba(255, 255, 255, 0.08);
+      --glow: rgba(56, 189, 248, 0.25);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Tajawal', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2.5rem 1rem;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    .ambient-glow {
+      position: fixed;
+      width: 450px;
+      height: 450px;
+      border-radius: 50%;
+      filter: blur(120px);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .glow-1 {
+      top: -100px;
+      right: -100px;
+      background: rgba(56, 189, 248, 0.18);
+    }
+
+    .glow-2 {
+      bottom: -120px;
+      left: -120px;
+      background: rgba(129, 140, 248, 0.2);
+    }
+
+    .profile-wrapper {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 540px;
+      background: var(--card-bg);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid var(--border);
+      border-radius: 32px;
+      padding: 3rem 2rem 2.5rem;
+      box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.6), 0 0 35px var(--glow);
+      animation: floatIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes floatIn {
+      from { opacity: 0; transform: translateY(30px) scale(0.97); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .avatar-area {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .avatar-glow {
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+      animation: spinGlow 6s linear infinite;
+      filter: blur(8px);
+      opacity: 0.7;
+    }
+
+    @keyframes spinGlow {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .avatar-box {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: #0f172a;
+      border: 3px solid rgba(255, 255, 255, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: #fff;
+    }
+
+    .online-badge {
+      position: absolute;
+      bottom: 6px;
+      left: 6px;
+      width: 22px;
+      height: 22px;
+      background: #10b981;
+      border: 4px solid #0f172a;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #10b981;
+    }
+
+    .header-info {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .name-title {
+      font-size: 2.2rem;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #ffffff, #cbd5e1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.3rem;
+    }
+
+    .user-handle {
+      display: inline-block;
+      direction: ltr;
+      color: var(--primary);
+      font-size: 0.95rem;
+      font-weight: 700;
+      background: rgba(56, 189, 248, 0.1);
+      padding: 0.3rem 0.8rem;
+      border-radius: 50px;
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      margin-bottom: 1rem;
+    }
+
+    .user-bio {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    .section-label {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 2rem;
+    }
+
+    .skill-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      padding: 0.5rem 1rem;
+      border-radius: 14px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #e2e8f0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.25s ease;
+    }
+
+    .skill-card:hover {
+      background: rgba(56, 189, 248, 0.12);
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(56, 189, 248, 0.15);
+    }
+
+    .links-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .link-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.1rem 1.3rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      color: var(--text);
+      text-decoration: none;
+      transition: all 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .link-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(90deg, rgba(56, 189, 248, 0.1), rgba(129, 140, 248, 0.1));
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    .link-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px) scale(1.01);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+    }
+
+    .link-card:hover::before {
+      opacity: 1;
+    }
+
+    .card-content {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      z-index: 1;
+    }
+
+    .icon-box {
+      font-size: 1.4rem;
+      width: 42px;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
+    .card-text h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 0.15rem;
+    }
+
+    .card-text p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .card-arrow {
+      position: relative;
+      z-index: 1;
+      color: var(--text-muted);
+      font-size: 1.3rem;
+      transition: all 0.25s ease;
+    }
+
+    .link-card:hover .card-arrow {
+      color: var(--primary);
+      transform: translateX(-5px);
+    }
+
+    .footer-note {
+      text-align: center;
+      margin-top: 2.2rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+
+  <div class="profile-wrapper">
+    <div class="avatar-area">
+      <div class="avatar-glow"></div>
+      <div class="avatar-box">ع</div>
+      <div class="online-badge" title="متصل"></div>
+    </div>
+
+    <div class="header-info">
+      <h1 class="name-title">عصام</h1>
+      <span class="user-handle">@kaisxb</span>
+      <p class="user-bio">مطور واجهات ومصمم تجارب تفاعلية 🚀 شغوف بالبرمجة، الألعاب، وبناء المشاريع الرقمية المبتكرة.</p>
+    </div>
+
+    <div class="section-label">⚡ المهارات والاهتمامات</div>
+    <div class="skills-grid">
+      <div class="skill-card">💻 تطوير الويب</div>
+      <div class="skill-card">🎨 تصميم الواجهات والشعارات</div>
+      <div class="skill-card">🎮 صناعة الألعاب والتحديات</div>
+      <div class="skill-card">🌐 GitHub & Hosting</div>
+    </div>
+
+    <div class="section-label">🚀 المشاريع وأماكن تواجدي</div>
+    <div class="links-stack">
+      <a href="https://kaisxb.github.io/kai/" target="_blank" class="link-card">
+        <div class="card-content">
+          <div class="icon-box">🏆</div>
+          <div class="card-text">
+            <h4>تحدي لغتي الخارق</h4>
+            <p>لعبة اختبارات تفاعلية وسريعة مع نظام نقاط ومؤقت</p>
+          </div>
+        </div>
+        <span class="card-arrow">←</span>
+      </a>
+
+      <a href="https://github.com/kaisxb" target="_blank" class="link-card">
+        <div class="card-content">
+          <div class="icon-box">🐙</div>
+          <div class="card-text">
+            <h4>مستودع الأكواد (GitHub)</h4>
+            <p>استكشف جميع مشاريعي وأكوادي المفتوحة</p>
+          </div>
+        </div>
+        <span class="card-arrow">←</span>
+      </a>
+    </div>
+
+    <div class="footer-note">
+      تم التصميم والتطوير بكل إبداع ✨
+    </div>
+  </div>
+
+</body>
+</html>
+طريقة الرفع:
+
+إذا أردت أن يكون هو واجهة موقعك الأساسية، أعد تسمية الملف إلى index.html وارفعه لمستودعك.
+
+إذا أردت إبقاء لعبة الأسئلة في الصفحة الرئيسية، ارفعه باسمه الحالي profile.html وستفتحه مباشرة عبر الرابط: [https://kaisxb.github.io/kai/profile.html](https://kaisxb.github.io/kai/profile.html).
+
+السبب أن عملية النشر في مستودعك فشلت (العلامة الحمراء في الصورة السابقة)، وغيت هاب لن يعرض الموقع طالما النشر فاشل.
+
+لحل المشكلة وتشغيل الموقع في ثوانٍ، اتبع هذه الخطوات بالترتيب:
+
+1. تفعيل الإيميل (أهم خطوة):
+
+افتح بريدك الإلكتروني وابحث عن رسالة من GitHub بعنوان:
+Please verify your email address
+
+اضغط على زر Verify email address (بدون هذه الخطوة سيرفض غيت هاب تشغيل Pages تماماً).
+
+2. إنشاء ملف .nojekyll لإلغاء أي خطأ برمجي:
+
+ادخل على المستودع kai واضغط على تبويب Code.
+
+اضغط على زر Add file ثم اختر Create new file.
+
+في خانة اسم الملف، اكتب بدقة:
+.nojekyll (نقطة بالبداية وبدون مسافات).
+
+اترك محتوى الملف فارغاً تماماً، وانزل للأسفل واضغط الزر الأخضر Commit changes.
+
+3. التأكد من اسم ملف الموقع:
+
+في تبويب Code، تأكد أن ملف الكود اسمه index.html بحروف صغيرة فقط (وليس Index.html أو profile.html كصفحة رئيسية).
+
+4. التحقق والتشغيل:
+
+اذهب إلى تبويب Actions أعلى الصفحة.
+
+ستجد عملية جديدة بدأت باسم pages build and deployment، انتظر حوالي 30 إلى 60 ثانية حتى تتحول الدائرة إلى علامة صح خضراء (✅).
+
+افتح الرابط:
+[https://kaisxb.github.io/kai/](https://kaisxb.github.io/kai/)
+
+إذا لم يفتح فوراً، اضغط Ctrl + F5 لتحديث الصفحة ومسح الكاش.
+
+بداية جديدة ومستودع جديد باسم profa، خطوة ممتازة لتفادي مشاكل المستودع القديم!
+
+اتبع الخطوات التالية بالترتيب:
+
+إنشاء المستودع:
+
+اضغط على الزر الأخضر بالأسفل: Create repository.
+
+رفع الملف وتسميته:
+
+في الصفحة التالية اضغط على uploading an existing file.
+
+ارفع ملف الملف الشخصي، لكن تأكد أن اسمه داخل المستودع هو: index.html (وليس profa.html أو profile.html، لأن GitHub يبحث دائماً عن index.html ليعرضه كصفحة رئيسية).
+
+اضغط Commit changes.
+
+تفعيل GitHub Pages:
+
+ادخل على Settings من الشريط العلوي.
+
+اختر Pages من القائمة الجانبية اليسرى.
+
+عند خيار Branch، اختر main واضغط Save.
+
+الرابط المباشر:
+
+انتظر دقيقة واحدة، وسيكون رابط ملفك الشخصي متاحاً عبر:
+[https://kaisxb.github.io/profa/](https://kaisxb.github.io/profa/)
+
+(ملاحظة: تأكد فقط من أنك ضغطت على رابط التحقق في بريدك الإلكتروني إذا كان الحساب يطلب تفعيلاً حتى يكتمل النشر بنجاح).
+
+اسم الملف الظاهر في شاشتك الآن هو gemini-code-1789557427276.html. إذا رُفع بهذا الاسم، ستظهر رسالة 404 مجدداً؛ لأن نظام الاستضافة يبحث تلقائياً عن ملف باسم index.html لفتحه كواجهة أساسية.
+
+خطوات التعديل السريع:
+
+اضغط على علامة X بجانب اسم الملف لإلغاء إضافته الحالية.
+
+غيّر اسم الملف المحفوظ على جهازك من gemini-code-... إلى:
+index.html (بحروف صغيرة تماماً).
+
+اسحب الملف بعد تعديل اسمه إلى المربع لرفعه.
+
+اضغط على الزر الأخضر Commit changes.
+
+توجه إلى Settings > Pages واختر الفرع main ثم اضغط Save.
+
+الترجمة توضح لك لبّ المشكلة بالضبط:
+
+«يجب توفير ملف باسم index.html»
+
+لأنك رفعت الملف باسمه الطويل (gemini-code-...) بدلاً من index.html، يبحث الموقع عن الصفحة الرئيسية ولا يجدها فتظهر شاشة الخطأ.
+
+طريقة التعديل وتغيير الاسم مباشرة من داخل GitHub:
+
+ادخل على مستودعك profa وافتح تبويب Code.
+
+اضغط على اسم الملف الطويل لفتحه.
+
+اضغط على أيقونة القلم ✏️ (Edit this file) في أعلى اليمين.
+
+امسح الاسم الطويل واكتب مكانه:
+index.html (بحروف صغيرة وبدون مسافات).
+
+انزل للأسفل واضغط الزر الأخضر Commit changes.
+
+انتظر دقيقة واحدة وافتح الرابط التالي في صفحة جديدة:
+[https://kaisxb.github.io/profa/](https://kaisxb.github.io/profa/)
+
+ارسلي الملف HTMLL
+
+Python
+# Create a clean index.html file with the portfolio code
+code = """<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>عصام | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #070913;
+      --card-bg: rgba(17, 24, 39, 0.65);
+      --primary: #38bdf8;
+      --secondary: #818cf8;
+      --accent: #c084fc;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --border: rgba(255, 255, 255, 0.08);
+      --glow: rgba(56, 189, 248, 0.25);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Tajawal', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2.5rem 1rem;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    .ambient-glow {
+      position: fixed;
+      width: 450px;
+      height: 450px;
+      border-radius: 50%;
+      filter: blur(120px);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .glow-1 {
+      top: -100px;
+      right: -100px;
+      background: rgba(56, 189, 248, 0.18);
+    }
+
+    .glow-2 {
+      bottom: -120px;
+      left: -120px;
+      background: rgba(129, 140, 248, 0.2);
+    }
+
+    .profile-wrapper {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 540px;
+      background: var(--card-bg);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid var(--border);
+      border-radius: 32px;
+      padding: 3rem 2rem 2.5rem;
+      box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.6), 0 0 35px var(--glow);
+      animation: floatIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes floatIn {
+      from { opacity: 0; transform: translateY(30px) scale(0.97); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .avatar-area {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .avatar-glow {
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+      animation: spinGlow 6s linear infinite;
+      filter: blur(8px);
+      opacity: 0.7;
+    }
+
+    @keyframes spinGlow {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .avatar-box {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: #0f172a;
+      border: 3px solid rgba(255, 255, 255, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: #fff;
+    }
+
+    .online-badge {
+      position: absolute;
+      bottom: 6px;
+      left: 6px;
+      width: 22px;
+      height: 22px;
+      background: #10b981;
+      border: 4px solid #0f172a;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #10b981;
+    }
+
+    .header-info {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .name-title {
+      font-size: 2.2rem;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #ffffff, #cbd5e1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.3rem;
+    }
+
+    .user-handle {
+      display: inline-block;
+      direction: ltr;
+      color: var(--primary);
+      font-size: 0.95rem;
+      font-weight: 700;
+      background: rgba(56, 189, 248, 0.1);
+      padding: 0.3rem 0.8rem;
+      border-radius: 50px;
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      margin-bottom: 1rem;
+    }
+
+    .user-bio {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    .section-label {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 2rem;
+    }
+
+    .skill-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      padding: 0.5rem 1rem;
+      border-radius: 14px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #e2e8f0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.25s ease;
+    }
+
+    .skill-card:hover {
+      background: rgba(56, 189, 248, 0.12);
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(56, 189, 248, 0.15);
+    }
+
+    .links-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .link-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.1rem 1.3rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      color: var(--text);
+      text-decoration: none;
+      transition: all 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .link-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(90deg, rgba(56, 189, 248, 0.1), rgba(129, 140, 248, 0.1));
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    .link-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px) scale(1.01);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+    }
+
+    .link-card:hover::before {
+      opacity: 1;
+    }
+
+    .card-content {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      z-index: 1;
+    }
+
+    .icon-box {
+      font-size: 1.4rem;
+      width: 42px;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
+    .card-text h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 0.15rem;
+    }
+
+    .card-text p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .card-arrow {
+      position: relative;
+      z-index: 1;
+      color: var(--text-muted);
+      font-size: 1.3rem;
+      transition: all 0.25s ease;
+    }
+
+    .link-card:hover .card-arrow {
+      color: var(--primary);
+      transform: translateX(-5px);
+    }
+
+    .footer-note {
+      text-align: center;
+      margin-top: 2.2rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+
+  <div class="profile-wrapper">
+    <div class="avatar-area">
+      <div class="avatar-glow"></div>
+      <div class="avatar-box">ع</div>
+      <div class="online-badge" title="متصل"></div>
+    </div>
+
+    <div class="header-info">
+      <h1 class="name-title">عصام</h1>
+      <span class="user-handle">@kaisxb</span>
+      <p class="user-bio">مطور واجهات ومصمم تجارب تفاعلية 🚀 شغوف بالبرمجة، الألعاب، وبناء المشاريع الرقمية المبتكرة.</p>
+    </div>
+
+    <div class="section-label">⚡ المهارات والاهتمامات</div>
+    <div class="skills-grid">
+      <div class="skill-card">💻 تطوير الويب</div>
+      <div class="skill-card">🎨 تصميم الواجهات والشعارات</div>
+      <div class="skill-card">🎮 صناعة الألعاب والتحديات</div>
+      <div class="skill-card">🌐 GitHub & Hosting</div>
+    </div>
+
+    <div class="section-label">🚀 المشاريع وأماكن تواجدي</div>
+    <div class="links-stack">
+      <a href="https://kaisxb.github.io/kai/" target="_blank" class="link-card">
+        <div class="card-content">
+          <div class="icon-box">🏆</div>
+          <div class="card-text">
+            <h4>تحدي لغتي الخارق</h4>
+            <p>لعبة اختبارات تفاعلية وسريعة مع نظام نقاط ومؤقت</p>
+          </div>
+        </div>
+        <span class="card-arrow">←</span>
+      </a>
+
+      <a href="https://github.com/kaisxb" target="_blank" class="link-card">
+        <div class="card-content">
+          <div class="icon-box">🐙</div>
+          <div class="card-text">
+            <h4>مستودع الأكواد (GitHub)</h4>
+            <p>استكشف جميع مشاريعي وأكوادي المفتوحة</p>
+          </div>
+        </div>
+        <span class="card-arrow">←</span>
+      </a>
+    </div>
+
+    <div class="footer-note">
+      تم التصميم والتطوير بكل إبداع ✨
+    </div>
+  </div>
+
+</body>
+</html>
+"""
+
+with open("index.html", "w", encoding="utf-8") as f:
+    f.write(code)
+
+print("Saved as index.html")
+
+ناتج الرمز
+Saved as index.html
+
+الملف جاهز ومُعد ومُسمّى بدقة index.html ليعمل مباشرة دون أخطاء:
+
+[file-tag: code-generated-file-84cd2b8b-89d4-4d84-a574-7290c0a3128a]
+
+طريقة الرفع السريعة:
+
+حمّل الملف أعلاه إلى جهازك (تأكد أن اسمه باقٍ index.html).
+
+ادخل مستودعك profa واضغط على Add file ثم Upload files.
+
+اسحب ملف index.html الجديد واضغط Commit changes.
+
+انتظر نحو دقيقة وافتح الرابط المباشر:
+[https://kaisxb.github.io/profa/](https://kaisxb.github.io/profa/)
+
+الملف الذي أرفقته هو كود بايثون كان يقوم بإنشاء الملف داخلياً. حتى لا تضطر لتشغيل أي برامج على جهازك، هذا هو كود index.html الجاهز بالكامل:
+
+HTML
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>عصام | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #070913;
+      --card-bg: rgba(17, 24, 39, 0.65);
+      --primary: #38bdf8;
+      --secondary: #818cf8;
+      --accent: #c084fc;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --border: rgba(255, 255, 255, 0.08);
+      --glow: rgba(56, 189, 248, 0.25);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Tajawal', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2.5rem 1rem;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    .ambient-glow {
+      position: fixed;
+      width: 450px;
+      height: 450px;
+      border-radius: 50%;
+      filter: blur(120px);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .glow-1 {
+      top: -100px;
+      right: -100px;
+      background: rgba(56, 189, 248, 0.18);
+    }
+
+    .glow-2 {
+      bottom: -120px;
+      left: -120px;
+      background: rgba(129, 140, 248, 0.2);
+    }
+
+    .profile-wrapper {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 540px;
+      background: var(--card-bg);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid var(--border);
+      border-radius: 32px;
+      padding: 3rem 2rem 2.5rem;
+      box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.6), 0 0 35px var(--glow);
+      animation: floatIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes floatIn {
+      from { opacity: 0; transform: translateY(30px) scale(0.97); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .avatar-area {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .avatar-glow {
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+      animation: spinGlow 6s linear infinite;
+      filter: blur(8px);
+      opacity: 0.7;
+    }
+
+    @keyframes spinGlow {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .avatar-box {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: #0f172a;
+      border: 3px solid rgba(255, 255, 255, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: #fff;
+    }
+
+    .online-badge {
+      position: absolute;
+      bottom: 6px;
+      left: 6px;
+      width: 22px;
+      height: 22px;
+      background: #10b981;
+      border: 4px solid #0f172a;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #10b981;
+    }
+
+    .header-info {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .name-title {
+      font-size: 2.2rem;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #ffffff, #cbd5e1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.3rem;
+    }
+
+    .user-handle {
+      display: inline-block;
+      direction: ltr;
+      color: var(--primary);
+      font-size: 0.95rem;
+      font-weight: 700;
+      background: rgba(56, 189, 248, 0.1);
+      padding: 0.3rem 0.8rem;
+      border-radius: 50px;
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      margin-bottom: 1rem;
+    }
+
+    .user-bio {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    .section-label {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 2rem;
+    }
+
+    .skill-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      padding: 0.5rem 1rem;
+      border-radius: 14px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #e2e8f0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.25s ease;
+    }
+
+    .skill-card:hover {
+      background: rgba(56, 189, 248, 0.12);
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(56, 189, 248, 0.15);
+    }
+
+    .links-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .link-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.1rem 1.3rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      color: var(--text);
+      text-decoration: none;
+      transition: all 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .link-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(90deg, rgba(56, 189, 248, 0.1), rgba(129, 140, 248, 0.1));
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    .link-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px) scale(1.01);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+    }
+
+    .link-card:hover::before {
+      opacity: 1;
+    }
+
+    .card-content {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      z-index: 1;
+    }
+
+    .icon-box {
+      font-size: 1.4rem;
+      width: 42px;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
+    .card-text h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 0.15rem;
+    }
+
+    .card-text p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .card-arrow {
+      position: relative;
+      z-index: 1;
+      color: var(--text-muted);
+      font-size: 1.3rem;
+      transition: all 0.25s ease;
+    }
+
+    .link-card:hover .card-arrow {
+      color: var(--primary);
+      transform: translateX(-5px);
+    }
+
+    .footer-note {
+      text-align: center;
+      margin-top: 2.2rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+
+  <div class="profile-wrapper">
+    <div class="avatar-area">
+      <div class="avatar-glow"></div>
+      <div class="avatar-box">ع</div>
+      <div class="online-badge" title="متصل"></div>
+    </div>
+
+    <div class="header-info">
+      <h1 class="name-title">عصام</h1>
+      <span class="user-handle">@kaisxb</span>
+      <p class="user-bio">مطور واجهات ومصمم تجارب تفاعلية 🚀 شغوف بالبرمجة، الألعاب، وبناء المشاريع الرقمية المبتكرة.</p>
+    </div>
+
+    <div class="section-label">⚡ المهارات والاهتمامات</div>
+    <div class="skills-grid">
+      <div class="skill-card">💻 تطوير الويب</div>
+      <div class="skill-card">🎨 تصميم الواجهات والشعارات</div>
+      <div class="skill-card">🎮 صناعة الألعاب والتحديات</div>
+      <div class="skill-card">🌐 GitHub & Hosting</div>
+    </div>
+
+    <div class="section-label">🚀 المشاريع وأماكن تواجدي</div>
+    <div class="links-stack">
+      <a href="https://kaisxb.github.io/kai/" target="_blank" class="link-card">
+        <div class="card-content">
+          <div class="icon-box">🏆</div>
+          <div class="card-text">
+            <h4>تحدي لغتي الخارق</h4>
+            <p>لعبة اختبارات تفاعلية وسريعة مع نظام نقاط ومؤقت</p>
+          </div>
+        </div>
+        <span class="card-arrow">←</span>
+      </a>
+
+      <a href="https://github.com/kaisxb" target="_blank" class="link-card">
+        <div class="card-content">
+          <div class="icon-box">🐙</div>
+          <div class="card-text">
+            <h4>مستودع الأكواد (GitHub)</h4>
+            <p>استكشف جميع مشاريعي وأكوادي المفتوحة</p>
+          </div>
+        </div>
+        <span class="card-arrow">←</span>
+      </a>
+    </div>
+
+    <div class="footer-note">
+      تم التصميم والتطوير بكل إبداع ✨
+    </div>
+  </div>
+
+</body>
+</html>
+أسهل وأسرع طريقة لإنشائه داخل المستودع مباشرة:
+
+ادخل مستودعك profa على موقع GitHub.  
+PY
+
+اضغط على زر Add file ثم اختر Create new file.
+
+في مربع اسم الملف بالأعلى، اكتب بدقة:
+index.html
+
+  
+PY
+
+انسخ الكود أعلاه والصقه مباشرة في المربع الكبير المخصص للكتابة.
+
+انزل لأسفل الصفحة واضغط الزر الأخضر: Commit changes.
+
+انتظر دقيقة واحدة وافتح رابط الموقع:
+[https://kaisxb.github.io/profa/](https://kaisxb.github.io/profa/)
+
+غير الملف و ارسلي
+
+تم تعديل وتحديث التصميم بالكامل بأسلوب نيون عصري ومبسط، وجُهز في ملف index.html جاهز للرفع:
+
+[file-tag: code-generated-file-564fd8d2-ffc8-4570-bf99-c122a03b0627]
+
+خطوات التحديث على GitHub:
+
+نزّل ملف index.html من الزر أعلاه.  
+PY
+
+افتح مستودعك profa واضغط على Add file ثم Upload files.  
+PY
+
+ارفع الملف واضغط Commit changes.
+
+خلال دقيقة سيتم تحديث موقعك مباشرة على الرابط:
+[https://kaisxb.github.io/profa/](https://kaisxb.github.io/profa/)
+
+سوي لي موقع اكتروني لعبه بسيطه
+
+صممت لك لعبة أركيد خفيفة ومسلية باسم «صائد الجواهر 💎» داخل ملف ويب كامل، تدعم اللمس بالجوال والماوس وأسهم الكيبورد مع مؤقت زمني وأصوات تفاعلية.
+
+الملف جاهز للتحميل المباشر:
+
+رمز HTML
+index
+ HTML 
+كود اللعبة كاملاً:
+
+HTML
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لعبة التقاط الجواهر 💎</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@700;900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Tajawal', sans-serif;
+      user-select: none;
+    }
+
+    body {
+      background: radial-gradient(circle at center, #1e1b4b, #0f172a);
+      color: #f8fafc;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      overflow: hidden;
+    }
+
+    .game-wrapper {
+      width: 100%;
+      max-width: 420px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .stats-bar {
+      display: flex;
+      justify-content: space-between;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 16px;
+      padding: 0.8rem 1.2rem;
+      font-size: 1.1rem;
+      font-weight: 900;
+      backdrop-filter: blur(8px);
+    }
+
+    .score { color: #38bdf8; }
+    .timer { color: #f59e0b; }
+
+    #gameCanvas {
+      background: #090d16;
+      border: 2px solid rgba(56, 189, 248, 0.3);
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(56, 189, 248, 0.1);
+      width: 100%;
+      display: block;
+      touch-action: none;
+    }
+
+    .controls-hint {
+      text-align: center;
+      color: #94a3b8;
+      font-size: 0.9rem;
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.88);
+      backdrop-filter: blur(10px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+      z-index: 10;
+    }
+
+    .overlay.hidden { display: none; }
+
+    .overlay h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+      color: #38bdf8;
+    }
+
+    .overlay p {
+      color: #cbd5e1;
+      font-size: 1.05rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .btn-play {
+      background: linear-gradient(135deg, #38bdf8, #6366f1);
+      border: none;
+      color: #fff;
+      font-size: 1.2rem;
+      font-weight: 900;
+      padding: 0.9rem 2.2rem;
+      border-radius: 16px;
+      cursor: pointer;
+      box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
+      transition: transform 0.2s;
+    }
+
+    .btn-play:hover { transform: scale(1.05); }
+  </style>
+</head>
+<body>
+
+  <div class="game-wrapper">
+    <div class="stats-bar">
+      <div>💎 النقاط: <span id="scoreText" class="score">0</span></div>
+      <div>⏱️ الوقت: <span id="timeText" class="timer">30</span>ث</div>
+    </div>
+
+    <div style="position: relative;">
+      <canvas id="gameCanvas" width="400" height="520"></canvas>
+
+      <!-- شاشة البداية -->
+      <div id="startScreen" class="overlay">
+        <h1>صائد الجواهر 💎</h1>
+        <p>التقط أكبر عدد من الجواهر المتساقطة قبل انتهاء الوقت!<br>وتفادَ القنابل الحمراء 💣</p>
+        <button class="btn-play" onclick="startGame()">ابدأ اللعب 🚀</button>
+      </div>
+
+      <!-- شاشة انتهاء الجولة -->
+      <div id="endScreen" class="overlay hidden">
+        <h1>انتهت الجولة! ⏱️</h1>
+        <p>مجموع الجواهر التي جمعتها:<br><span id="finalScore" style="font-size: 3rem; color: #38bdf8; font-weight: 900;">0</span></p>
+        <button class="btn-play" onclick="startGame()">العب ثانية 🔄</button>
+      </div>
+    </div>
+
+    <div class="controls-hint">حرك السلة بالماوس، باللمس، أو بأسهم الكيبورد ⬅️ ➡️</div>
+  </div>
+
+  <script>
+    const canvas = document.getElementById("gameCanvas");
+    const ctx = canvas.getContext("2d");
+
+    // مؤثرات صوتية عبر المتصفح
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    function beep(freq, duration) {
+      if (audioCtx.state === 'suspended') audioCtx.resume();
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = freq;
+      osc.frequency.value = freq;
+      gain.gain.setValueAtTime(0.08, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + duration);
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start();
+      osc.stop(audioCtx.currentTime + duration);
+    }
+
+    const basket = {
+      x: 160,
+      y: 470,
+      w: 80,
+      h: 22,
+      speed: 7
+    };
+
+    let items = [];
+    let score = 0;
+    let timeLeft = 30;
+    let isRunning = false;
+    let timerTimer = null;
+    let leftPressed = false;
+    let rightPressed = false;
+
+    function startGame() {
+      score = 0;
+      timeLeft = 30;
+      items = [];
+      isRunning = true;
+      document.getElementById("scoreText").innerText = score;
+      document.getElementById("timeText").innerText = timeLeft;
+      document.getElementById("startScreen").classList.add("hidden");
+      document.getElementById("endScreen").classList.add("hidden");
+
+      clearInterval(timerTimer);
+      timerTimer = setInterval(() => {
+        timeLeft--;
+        document.getElementById("timeText").innerText = timeLeft;
+        if (timeLeft <= 0) endGame();
+      }, 1000);
+
+      requestAnimationFrame(gameLoop);
+    }
+
+    function endGame() {
+      isRunning = false;
+      clearInterval(timerTimer);
+      document.getElementById("finalScore").innerText = score;
+      document.getElementById("endScreen").classList.remove("hidden");
+    }
+
+    function spawnItem() {
+      if (Math.random() < 0.04) {
+        const isBomb = Math.random() < 0.22;
+        items.push({
+          x: Math.random() * (canvas.width - 30) + 15,
+          y: -20,
+          size: 24,
+          speed: 3 + Math.random() * 2.5,
+          type: isBomb ? "bomb" : "gem"
+        });
+      }
+    }
+
+    function update() {
+      if (leftPressed && basket.x > 0) basket.x -= basket.speed;
+      if (rightPressed && basket.x < canvas.width - basket.w) basket.x += basket.speed;
+
+      spawnItem();
+
+      for (let i = items.length - 1; i >= 0; i--) {
+        let it = items[i];
+        it.y += it.speed;
+
+        if (
+          it.y + it.size / 2 >= basket.y &&
+          it.y - it.size / 2 <= basket.y + basket.h &&
+          it.x >= basket.x &&
+          it.x <= basket.x + basket.w
+        ) {
+          if (it.type === "gem") {
+            score += 10;
+            beep(700, 0.08);
+          } else {
+            score = Math.max(0, score - 15);
+            beep(180, 0.15);
+          }
+          document.getElementById("scoreText").innerText = score;
+          items.splice(i, 1);
+          continue;
+        }
+
+        if (it.y > canvas.height + 20) {
+          items.splice(i, 1);
+        }
+      }
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = "#38bdf8";
+      ctx.beginPath();
+      ctx.roundRect(basket.x, basket.y, basket.w, basket.h, 10);
+      ctx.fill();
+
+      ctx.fillStyle = "rgba(56, 189, 248, 0.3)";
+      ctx.beginPath();
+      ctx.roundRect(basket.x - 4, basket.y - 2, basket.w + 8, basket.h + 4, 12);
+      ctx.fill();
+
+      ctx.font = "24px Arial";
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      items.forEach(it => {
+        ctx.fillText(it.type === "gem" ? "💎" : "💣", it.x, it.y);
+      });
+    }
+
+    function gameLoop() {
+      if (!isRunning) return;
+      update();
+      draw();
+      requestAnimationFrame(gameLoop);
+    }
+
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft" || e.key === "a") leftPressed = true;
+      if (e.key === "ArrowRight" || e.key === "d") rightPressed = true;
+    });
+
+    window.addEventListener("keyup", (e) => {
+      if (e.key === "ArrowLeft" || e.key === "a") leftPressed = false;
+      if (e.key === "ArrowRight" || e.key === "d") rightPressed = false;
+    });
+
+    function setBasketPos(clientX) {
+      const rect = canvas.getBoundingClientRect();
+      const scaleX = canvas.width / rect.width;
+      const mouseX = (clientX - rect.left) * scaleX;
+      basket.x = Math.max(0, Math.min(canvas.width - basket.w, mouseX - basket.w / 2));
+    }
+
+    canvas.addEventListener("mousemove", (e) => setBasketPos(e.clientX));
+    canvas.addEventListener("touchmove", (e) => {
+      if (e.touches.length > 0) {
+        setBasketPos(e.touches[0].clientX);
+      }
+    }, { passive: true });
+  </script>
+</body>
+</html>
+طريقة تشغيلها على GitHub Pages:
+
+حمّل الملف باسم index.html وارفعها إلى مستودع جديد (مثل gem-catcher).
+
+فعّل Pages من إعدادات المستودع ليكون لديك رابط لعبة مباشر تشاركه مع أصحابك ليتحدوا نتيجتك!
+
+github اهم شي يضبط على
+
+حتى تضمن 100% أن أي موقع أو لعبة ترفعها على GitHub تعمل مباشرة وتتخلص من رسالة الخطأ (404 أو Failed to deploy)، اتبع هذه القاعدة الذهبية:
+
+اسم الملف الرئيسي: يجب أن يكون حصراً index.html (كل الأحرف صغيرة وبدون مسافات).
+
+إلغاء أخطاء Jekyll: أضف ملفاً فارغاً باسم .nojekyll بجانب ملف اللعبة؛ فهذا يمنع غيت هاب من تعطيل أكواد الـ JavaScript والـ HTML ويشغلها فوراً كصفحة ثابتة.
+
+خطوات تشغيل اللعبة السابقة على GitHub في دقيقة واحدة:
+
+ادخل إلى حسابك وأنشئ مستودعاً جديداً (مثلاً باسم gem-game) واجعله Public.
+
+داخل المستودع، اضغط Add file ثم Create new file:
+
+في خانة الاسم اكتب: index.html
+
+الصق كود اللعبة بالكامل في المربع الكبير، ثم اضغط Commit changes.
+
+بنفس الطريقة، اضغط ثانية Add file ثم Create new file:
+
+في خانة الاسم اكتب: .nojekyll
+
+اترك محتوى الملف فارغاً تماماً، ثم اضغط Commit changes.
+
+توجه إلى Settings > Pages:
+
+عند خيار Branch اختر main واضغط Save.
+
+خلال 30 إلى 60 ثانية، افتح رابطك المباشر:
+[https://kaisxb.github.io/gem-game/](https://kaisxb.github.io/gem-game/)
+
+ستفتح اللعبة فوراً وتستجيب للمس على الجوال، الماوس، والأسهم بدون أي أخطاء.
+
+\
+
+انتبه لاسم الملف في شاشتك: اسمه index (1).html. إذا رفعته بهذا الاسم فلن يفتح الموقع وستظهر لك شاشة الخطأ مجدداً، لأن GitHub لا يتعرف إلا على index.html فقط.
+
+عدّل الاسم في ثوانٍ بالخطوات التالية:
+
+اضغط على علامة X بجانب index (1).html لإلغاء رفعه الحالي.
+
+اذهب إلى مجلد التنزيلات في جهازك، واضغط بالزر الأيمن على الملف ثم اختر إعادة تسمية (Rename).
+
+احذف  (1) واجعل اسمه بدقة: index.html.
+
+اسحب الملف بعد تعديل اسمه إلى الصفحة مرة ثانية وافلته.
+
+اضغط على الزر الأخضر Commit changes.
+
+اذهب إلى Settings > Pages واختر الفرع main ثم اضغط Save.
+
+خلال دقيقة سيشتغل موقع اللعبة مباشرة على رابطك:
+[https://kaisxb.github.io/play/](https://kaisxb.github.io/play/)
+
+سبب الخطأ هو بقاء الملف باسم index (1).html داخل المستودع أو تعليق بناء GitHub Pages.
+
+حل المشكلة مباشرة من داخل صفحة GitHub:
+
+افتح مستودعك: [https://github.com/kaisxb/play](https://github.com/kaisxb/play)
+
+اضغط على تبويب Code.
+
+إذا وجدت الملف باسم index (1).html، اضغط عليه لفتحه.
+
+اضغط على أيقونة القلم ✏️ (Edit this file) أعلى يمين الكود.
+
+في خانة الاسم بالأعلى، امسح  (1) واجعل الاسم بدقة:
+index.html
+
+انزل للأسفل واضغط الزر الأخضر: Commit changes.
+
+الخطوة الإضافية لتفادي أخطاء البناء:
+
+داخل نفس صفحة Code، اضغط Add file ثم Create new file.
+
+اكتب في خانة الاسم: .nojekyll (بنقطة في البداية).
+
+اترك المحتوى فارغاً واضغط Commit changes.
+
+التأكد من اكتمال النشر:
+
+توجه إلى تبويب Actions أعلى الصفحة؛ انتظر ظهور علامة الصح الخضراء (✅) بدلاً من الدائرة المتحركة.
+
+افتح الرابط في نافذة متصفح متخفٍ (Incognito) أو اضغط Ctrl + Shift + R:
+[https://kaisxb.github.io/play/](https://kaisxb.github.io/play/)
+
+الاسم مكتوب بدقة واحترافية. تبقت آخر خطوتين لتشغيل الموقع:
+
+انزل لأسفل الصفحة واضغط على الزر الأخضر Commit changes.
+
+انتظر حوالي دقيقة واحدة، ثم افتح الرابط في صفحة جديدة:
+[https://kaisxb.github.io/play/](https://kaisxb.github.io/play/)
+
+ستفتح اللعبة مباشرة وتبدأ بالعمل دون أخطاء.
+
+ابيك تسوي لي ملف شخصي تعريف عني ويكون الموقع محترف
+
+تم تصميم وتجهيز موقع ملف شخصي احترافي حديث بنظام Bento Grid وواجهة زجاجية داكنة (Glassmorphism)، يربط مباشرة بين مشاريعك (لعبة صائد الجواهر، مسابقة لغتي، وحسابك على غيت هاب).
+
+الملف جاهز للتحميل المباشر باسم index.html:
+[file-tag: code-generated-file-5e30ee6d-a425-4540-83de-266300b9b856]
+
+كود الصفحة بالكامل:
+
+HTML
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -319,6 +3088,461 @@
         <div class="tags-container">
           <span class="tag">تطوير ألعاب الويب</span>
           <span class="tag">تصميم الشعارات</span>
+          <span class="tag">تجارب تفاعلية</span>
+          <span class="tag">صناعة المحتوى</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="projects-card">
+      <div class="section-heading">📁 معرض الأعمال والمشاريع</div>
+      <div class="project-links">
+        <a href="https://kaisxb.github.io/play/" target="_blank" class="proj-item">
+          <div class="proj-info">
+            <div class="proj-icon">💎</div>
+            <div class="proj-text">
+              <h4>لعبة صائد الجواهر</h4>
+              <p>لعبة أركيد سريعة تفاعلية مبرمجة بـ HTML5 Canvas</p>
+            </div>
+          </div>
+          <span class="arrow">←</span>
+        </a>
+
+        <a href="https://kaisxb.github.io/kai/" target="_blank" class="proj-item">
+          <div class="proj-info">
+            <div class="proj-icon">📖</div>
+            <div class="proj-text">
+              <h4>تحدي لغتي الأسطوري</h4>
+              <p>منصة مسابقات تفاعلية مع نظام نقاط ومؤقت زمني</p>
+            </div>
+          </div>
+          <span class="arrow">←</span>
+        </a>
+
+        <a href="https://github.com/kaisxb" target="_blank" class="proj-item">
+          <div class="proj-info">
+            <div class="proj-icon">🐙</div>
+            <div class="proj-text">
+              <h4>الملف الشخصي على GitHub</h4>
+              <p>استعراض كافة المستودعات والمشاريع المفتوحة</p>
+            </div>
+          </div>
+          <span class="arrow">←</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer">
+      تم التصميم والتطوير بكل إتقان ✨
+    </div>
+  </div>
+
+</body>
+</html>
+طريقة النشر:
+
+ارفع الملف باسم index.html داخل مستودعك profa، وخلال دقيقة واحدة ستظهر صفحتك التعريفية المتكاملة عبر:
+[https://kaisxb.github.io/profa/](https://kaisxb.github.io/profa/)
+
+ابي احط صوره و اغير كم شي
+
+النتيجة طالعة فخمة جداً في الصورة!
+
+لإضافة صورتك وتعديل النصوص، يمكنك تطبيق التعديلات مباشرة في الكود:
+
+1. طريقة وضع صورتك الشخصية
+استبدل وسم الحرف ع:
+
+HTML
+<div class="avatar">ع</div>
+بهذا السطر:
+
+HTML
+<img src="avatar.jpg" alt="عصام" class="avatar-img">
+ثم أضف تنسيق الصورة في جزء <style>:
+
+CSS
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+ملاحظة: ارفع صورتك إلى المستودع بنفس الاسم (مثلاً: avatar.jpg)، أو ضع رابط الصورة مباشرة داخل src="...".
+
+2. أماكن تعديل النصوص
+ابحث عن هذه الأسطر داخل الكود وغيّرها كما يناسبك:
+
+الاسم واليوزر:
+
+HTML
+<h1 class="name">عصام</h1>
+<span class="handle">@kaisxb</span>
+الوصف (Bio):
+
+HTML
+<p class="bio">اكتب الوصف الجديد هنا...</p>
+المهارات والاهتمامات:
+ابحث عن وسوم <span class="tag"> وغيّر الكلمات المكتوبة بداخلها أو أضف مهارات جديدة.
+
+إضافة أو تعديل الروابط:
+عدّل الرابط href والعناوين تحت قسم <!-- المشاريع والروابط السريعة -->.
+
+إذا أردت، أرسل لي النصوص والروابط التي تريد تغييرها، وسأجهز لك الكود كاملاً مع مكان الصورة لتقوم بنسخه مباشرة!
+
+تم تحديث كود ملفك الشخصي بالكامل وإضافة مكان مخصص للصورة الدائرية مع تأثير الهالة المتوهجة.
+
+الملف جاهز للتحميل:
+
+رمز HTML
+index
+ HTML 
+خطوتان لتظهر صورتك في الموقع:
+حفظ صورتك في المستودع:
+
+احفظ صورتك التي أرسلتها في جهازك وسمّها بدقة: avatar.jpg.
+
+ارفع الصورة إلى نفس المستودع (profa) بجانب ملف index.html.
+
+رفع ملف الكود الجديد:
+
+ارفع ملف index.html الذي حمّلته من الزر أعلاه واضغط Commit changes.
+
+ماذا لو أردت تغيير أي نص؟
+داخل ملف index.html، ستجد الأقسام واضحة جداً لتعديلها:
+
+الوصف التعريفي: غيّر النص داخل وسم <p class="bio">...</p>.
+
+المهارات والاهتمامات: يمكنك إضافة أو حذف أي كلمة داخل وسوم <span class="tag">.
+
+الروابط: استبدل روابط href="..." بأي حسابات أو مشاريع جديدة تريد إضافتها.
+
+
+
+
+‫Gemini هو نموذج ذكاء اصطناعي وقد يعرض معلومات خاطئة.
+
+جارٍ تحليل البيانات
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> kai | الملف الشخصي</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #07090e;
+      --card-bg: rgba(15, 23, 42, 0.75);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --primary: #38bdf8;
+      --secondary: #818cf8;
+      --accent: #c084fc;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Tajawal', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.14) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(129, 140, 248, 0.14) 0px, transparent 50%),
+        radial-gradient(at 50% 50%, rgba(192, 132, 252, 0.06) 0px, transparent 60%);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2.5rem 1rem;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+      animation: fadeIn 0.8s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--card-border);
+      border-radius: 28px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6), 0 0 30px rgba(56, 189, 248, 0.12);
+    }
+
+    .avatar-wrapper {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 1.4rem;
+    }
+
+    .avatar-ring {
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+      animation: rotateRing 8s linear infinite;
+      filter: blur(5px);
+    }
+
+    @keyframes rotateRing {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .avatar-img {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      border: 3px solid rgba(255, 255, 255, 0.2);
+      background: #0f172a;
+    }
+
+    .badge-status {
+      position: absolute;
+      bottom: 4px;
+      left: 6px;
+      background: #10b981;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 3.5px solid #0f172a;
+      box-shadow: 0 0 10px #10b981;
+      z-index: 2;
+    }
+
+    .name {
+      font-size: 2.2rem;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      margin-bottom: 0.2rem;
+      background: linear-gradient(135deg, #ffffff, #cbd5e1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .handle {
+      display: inline-block;
+      direction: ltr;
+      color: var(--primary);
+      font-size: 0.95rem;
+      font-weight: 700;
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      padding: 0.3rem 0.85rem;
+      border-radius: 50px;
+      margin-bottom: 1rem;
+    }
+
+    .bio {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    @media (max-width: 520px) {
+      .bento-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .bento-box {
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 1.3rem;
+      transition: all 0.25s ease;
+    }
+
+    .bento-box:hover {
+      border-color: rgba(56, 189, 248, 0.3);
+      transform: translateY(-3px);
+    }
+
+    .bento-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .tags-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .tag {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--card-border);
+      padding: 0.35rem 0.75rem;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      color: #e2e8f0;
+    }
+
+    .projects-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      padding: 1.6rem;
+    }
+
+    .section-heading {
+      font-size: 1.1rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .project-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .proj-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.2rem;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      text-decoration: none;
+      color: var(--text);
+      transition: all 0.25s ease;
+    }
+
+    .proj-item:hover {
+      background: linear-gradient(90deg, rgba(56, 189, 248, 0.12), rgba(129, 140, 248, 0.12));
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .proj-info {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .proj-icon {
+      font-size: 1.4rem;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      border: 1px solid var(--card-border);
+    }
+
+    .proj-text h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.15rem;
+    }
+
+    .proj-text p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .arrow {
+      color: var(--text-muted);
+      font-size: 1.2rem;
+      transition: all 0.25s ease;
+    }
+
+    .proj-item:hover .arrow {
+      color: var(--primary);
+      transform: translateX(-4px);
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      padding: 0.5rem 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="hero-card">
+      <div class="avatar-wrapper">
+        <div class="avatar-ring"></div>
+        <!-- تم وضع صورتك الرمزية هنا -->
+        <img src="avatar.jpg" alt="عصام" class="avatar-img">
+        <div class="badge-status" title="متصل"></div>
+      </div>
+
+      <h1 class="name">عصام</h1>
+      <span class="handle">@kaisxb</span>
+      <p class="bio">مطور واجهات ومصمم تجارب ويب تفاعلية 🚀 أهتم بتطوير الألعاب الخفيفة، صفحات الهبوط العصرية، وتحويل الأفكار الرقمية إلى واقع تفاعلي.</p>
+    </div>
+
+    <div class="bento-grid">
+      <div class="bento-box">
+        <div class="bento-title">⚡ البرمجة والتطوير</div>
+        <div class="tags-container">
+          <span class="tag">HTML5 & CSS3</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">GitHub Pages</span>
+          <span class="tag">UI/UX Design</span>
+        </div>
+      </div>
+
+      <div class="bento-box">
+        <div class="bento-title">🎮 الاهتمامات والشغف</div>
+        <div class="tags-container">
+          <span class="tag">تطوير ألعاب الويب</span>
+          <span class="tag">تصميم الواجهات</span>
           <span class="tag">تجارب تفاعلية</span>
           <span class="tag">صناعة المحتوى</span>
         </div>
