@@ -3,21 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>عصام | Portfolio</title>
+  <title>عصام | Portfolio & Developer Profile</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #070913;
-      --card-bg: rgba(17, 24, 39, 0.65);
+      --bg-dark: #07090e;
+      --card-bg: rgba(15, 23, 42, 0.75);
+      --card-border: rgba(255, 255, 255, 0.08);
       --primary: #38bdf8;
       --secondary: #818cf8;
       --accent: #c084fc;
       --text: #f8fafc;
       --text-muted: #94a3b8;
-      --border: rgba(255, 255, 255, 0.08);
-      --glow: rgba(56, 189, 248, 0.25);
     }
 
     * {
@@ -28,82 +27,68 @@
     }
 
     body {
-      background-color: var(--bg);
+      background-color: var(--bg-dark);
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.12) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(129, 140, 248, 0.12) 0px, transparent 50%),
+        radial-gradient(at 50% 50%, rgba(192, 132, 252, 0.05) 0px, transparent 60%);
       color: var(--text);
       min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 2.5rem 1rem;
-      position: relative;
-      overflow-x: hidden;
     }
 
-    .ambient-glow {
-      position: fixed;
-      width: 450px;
-      height: 450px;
-      border-radius: 50%;
-      filter: blur(120px);
-      z-index: 0;
-      pointer-events: none;
-    }
-
-    .glow-1 {
-      top: -100px;
-      right: -100px;
-      background: rgba(56, 189, 248, 0.18);
-    }
-
-    .glow-2 {
-      bottom: -120px;
-      left: -120px;
-      background: rgba(129, 140, 248, 0.2);
-    }
-
-    .profile-wrapper {
-      position: relative;
-      z-index: 1;
+    .container {
       width: 100%;
-      max-width: 540px;
+      max-width: 620px;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      animation: fadeIn 0.8s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-card {
       background: var(--card-bg);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      border: 1px solid var(--border);
-      border-radius: 32px;
-      padding: 3rem 2rem 2.5rem;
-      box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.6), 0 0 35px var(--glow);
-      animation: floatIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    @keyframes floatIn {
-      from { opacity: 0; transform: translateY(30px) scale(0.97); }
-      to { opacity: 1; transform: translateY(0) scale(1); }
-    }
-
-    .avatar-area {
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--card-border);
+      border-radius: 28px;
+      padding: 2.5rem 2rem;
+      text-align: center;
       position: relative;
-      width: 120px;
-      height: 120px;
-      margin: 0 auto 1.5rem;
+      overflow: hidden;
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6), 0 0 30px rgba(56, 189, 248, 0.1);
     }
 
-    .avatar-glow {
+    .avatar-wrapper {
+      position: relative;
+      width: 110px;
+      height: 110px;
+      margin: 0 auto 1.3rem;
+    }
+
+    .avatar-ring {
       position: absolute;
       inset: -4px;
       border-radius: 50%;
       background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
-      animation: spinGlow 6s linear infinite;
-      filter: blur(8px);
-      opacity: 0.7;
+      animation: rotateRing 8s linear infinite;
+      filter: blur(4px);
     }
 
-    @keyframes spinGlow {
+    @keyframes rotateRing {
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
     }
 
-    .avatar-box {
+    .avatar {
       position: relative;
       width: 100%;
       height: 100%;
@@ -113,246 +98,273 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 3.5rem;
+      font-size: 3rem;
       font-weight: 900;
       color: #fff;
     }
 
-    .online-badge {
+    .badge-status {
       position: absolute;
-      bottom: 6px;
+      bottom: 4px;
       left: 6px;
-      width: 22px;
-      height: 22px;
       background: #10b981;
-      border: 4px solid #0f172a;
+      width: 18px;
+      height: 18px;
       border-radius: 50%;
+      border: 3px solid #0f172a;
       box-shadow: 0 0 10px #10b981;
     }
 
-    .header-info {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    .name-title {
+    .name {
       font-size: 2.2rem;
       font-weight: 900;
       letter-spacing: -0.5px;
-      background: linear-gradient(135deg, #ffffff, #cbd5e1);
+      margin-bottom: 0.2rem;
+      background: linear-gradient(135deg, #ffffff, #94a3b8);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin-bottom: 0.3rem;
     }
 
-    .user-handle {
+    .handle {
       display: inline-block;
       direction: ltr;
       color: var(--primary);
       font-size: 0.95rem;
       font-weight: 700;
-      background: rgba(56, 189, 248, 0.1);
-      padding: 0.3rem 0.8rem;
-      border-radius: 50px;
+      background: rgba(56, 189, 248, 0.08);
       border: 1px solid rgba(56, 189, 248, 0.2);
+      padding: 0.3rem 0.85rem;
+      border-radius: 50px;
       margin-bottom: 1rem;
     }
 
-    .user-bio {
+    .bio {
       color: var(--text-muted);
       font-size: 1.05rem;
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
-    .section-label {
-      font-size: 0.95rem;
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    @media (max-width: 500px) {
+      .bento-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .bento-box {
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 1.4rem;
+      transition: all 0.25s ease;
+    }
+
+    .bento-box:hover {
+      border-color: rgba(56, 189, 248, 0.3);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 25px -8px rgba(0, 0, 0, 0.5);
+    }
+
+    .bento-title {
+      font-size: 1rem;
       font-weight: 700;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
+      color: var(--primary);
       margin-bottom: 0.8rem;
       display: flex;
       align-items: center;
       gap: 0.5rem;
     }
 
-    .skills-grid {
+    .tags-container {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.6rem;
-      margin-bottom: 2rem;
+      gap: 0.4rem;
     }
 
-    .skill-card {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--border);
-      padding: 0.5rem 1rem;
-      border-radius: 14px;
-      font-size: 0.9rem;
-      font-weight: 700;
+    .tag {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--card-border);
+      padding: 0.35rem 0.75rem;
+      border-radius: 10px;
+      font-size: 0.85rem;
       color: #e2e8f0;
+    }
+
+    .projects-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      padding: 1.6rem;
+    }
+
+    .section-heading {
+      font-size: 1.1rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      transition: all 0.25s ease;
     }
 
-    .skill-card:hover {
-      background: rgba(56, 189, 248, 0.12);
-      border-color: var(--primary);
-      color: var(--primary);
-      transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(56, 189, 248, 0.15);
-    }
-
-    .links-stack {
+    .project-links {
       display: flex;
       flex-direction: column;
-      gap: 0.85rem;
+      gap: 0.8rem;
     }
 
-    .link-card {
+    .proj-item {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 1.1rem 1.3rem;
+      padding: 1rem 1.2rem;
       background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      color: var(--text);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
       text-decoration: none;
+      color: var(--text);
       transition: all 0.25s ease;
-      position: relative;
-      overflow: hidden;
     }
 
-    .link-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background: linear-gradient(90deg, rgba(56, 189, 248, 0.1), rgba(129, 140, 248, 0.1));
-      opacity: 0;
-      transition: opacity 0.25s ease;
-    }
-
-    .link-card:hover {
+    .proj-item:hover {
+      background: linear-gradient(90deg, rgba(56, 189, 248, 0.12), rgba(129, 140, 248, 0.12));
       border-color: var(--primary);
-      transform: translateY(-2px) scale(1.01);
-      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+      transform: translateY(-2px);
     }
 
-    .link-card:hover::before {
-      opacity: 1;
-    }
-
-    .card-content {
-      position: relative;
+    .proj-info {
       display: flex;
       align-items: center;
-      gap: 0.9rem;
-      z-index: 1;
+      gap: 0.85rem;
     }
 
-    .icon-box {
+    .proj-icon {
       font-size: 1.4rem;
-      width: 42px;
-      height: 42px;
+      width: 44px;
+      height: 44px;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: rgba(255, 255, 255, 0.06);
+      background: rgba(255, 255, 255, 0.05);
       border-radius: 12px;
-      border: 1px solid var(--border);
+      border: 1px solid var(--card-border);
     }
 
-    .card-text h4 {
-      font-size: 1.05rem;
+    .proj-text h4 {
+      font-size: 1rem;
       font-weight: 700;
       margin-bottom: 0.15rem;
     }
 
-    .card-text p {
-      font-size: 0.85rem;
+    .proj-text p {
+      font-size: 0.82rem;
       color: var(--text-muted);
     }
 
-    .card-arrow {
-      position: relative;
-      z-index: 1;
+    .arrow {
       color: var(--text-muted);
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       transition: all 0.25s ease;
     }
 
-    .link-card:hover .card-arrow {
+    .proj-item:hover .arrow {
       color: var(--primary);
-      transform: translateX(-5px);
+      transform: translateX(-4px);
     }
 
-    .footer-note {
+    .footer {
       text-align: center;
-      margin-top: 2.2rem;
       font-size: 0.85rem;
       color: var(--text-muted);
+      padding: 0.5rem 0 1rem;
     }
   </style>
 </head>
 <body>
 
-  <div class="ambient-glow glow-1"></div>
-  <div class="ambient-glow glow-2"></div>
+  <div class="container">
+    <div class="hero-card">
+      <div class="avatar-wrapper">
+        <div class="avatar-ring"></div>
+        <div class="avatar">ع</div>
+        <div class="badge-status" title="متاح للمشاريع"></div>
+      </div>
 
-  <div class="profile-wrapper">
-    <div class="avatar-area">
-      <div class="avatar-glow"></div>
-      <div class="avatar-box">ع</div>
-      <div class="online-badge" title="متصل"></div>
+      <h1 class="name">عصام</h1>
+      <span class="handle">@kaisxb</span>
+      <p class="bio">مطور واجهات ومصمم تجارب ويب تفاعلية 🚀 أهتم بتطوير الألعاب الخفيفة، صفحات الهبوط العصرية، وتحويل الأفكار الرقمية إلى واقع تفاعلي.</p>
     </div>
 
-    <div class="header-info">
-      <h1 class="name-title">عصام</h1>
-      <span class="user-handle">@kaisxb</span>
-      <p class="user-bio">مطور واجهات ومصمم تجارب تفاعلية 🚀 شغوف بالبرمجة، الألعاب، وبناء المشاريع الرقمية المبتكرة.</p>
-    </div>
-
-    <div class="section-label">⚡ المهارات والاهتمامات</div>
-    <div class="skills-grid">
-      <div class="skill-card">💻 تطوير الويب</div>
-      <div class="skill-card">🎨 تصميم الواجهات والشعارات</div>
-      <div class="skill-card">🎮 صناعة الألعاب والتحديات</div>
-      <div class="skill-card">🌐 GitHub & Hosting</div>
-    </div>
-
-    <div class="section-label">🚀 المشاريع وأماكن تواجدي</div>
-    <div class="links-stack">
-      <a href="https://kaisxb.github.io/kai/" target="_blank" class="link-card">
-        <div class="card-content">
-          <div class="icon-box">🏆</div>
-          <div class="card-text">
-            <h4>تحدي لغتي الخارق</h4>
-            <p>لعبة اختبارات تفاعلية وسريعة مع نظام نقاط ومؤقت</p>
-          </div>
+    <div class="bento-grid">
+      <div class="bento-box">
+        <div class="bento-title">⚡ البرمجة والتطوير</div>
+        <div class="tags-container">
+          <span class="tag">HTML5 & CSS3</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">GitHub Pages</span>
+          <span class="tag">UI/UX Design</span>
         </div>
-        <span class="card-arrow">←</span>
-      </a>
+      </div>
 
-      <a href="https://github.com/kaisxb" target="_blank" class="link-card">
-        <div class="card-content">
-          <div class="icon-box">🐙</div>
-          <div class="card-text">
-            <h4>مستودع الأكواد (GitHub)</h4>
-            <p>استكشف جميع مشاريعي وأكوادي المفتوحة</p>
-          </div>
+      <div class="bento-box">
+        <div class="bento-title">🎮 الاهتمامات والشغف</div>
+        <div class="tags-container">
+          <span class="tag">تطوير ألعاب الويب</span>
+          <span class="tag">تصميم الشعارات</span>
+          <span class="tag">تجارب تفاعلية</span>
+          <span class="tag">صناعة المحتوى</span>
         </div>
-        <span class="card-arrow">←</span>
-      </a>
+      </div>
     </div>
 
-    <div class="footer-note">
-      تم التصميم والتطوير بكل إبداع ✨
+    <div class="projects-card">
+      <div class="section-heading">📁 معرض الأعمال والمشاريع</div>
+      <div class="project-links">
+        <a href="https://kaisxb.github.io/play/" target="_blank" class="proj-item">
+          <div class="proj-info">
+            <div class="proj-icon">💎</div>
+            <div class="proj-text">
+              <h4>لعبة صائد الجواهر</h4>
+              <p>لعبة أركيد سريعة تفاعلية مبرمجة بـ HTML5 Canvas</p>
+            </div>
+          </div>
+          <span class="arrow">←</span>
+        </a>
+
+        <a href="https://kaisxb.github.io/kai/" target="_blank" class="proj-item">
+          <div class="proj-info">
+            <div class="proj-icon">📖</div>
+            <div class="proj-text">
+              <h4>تحدي لغتي الأسطوري</h4>
+              <p>منصة مسابقات تفاعلية مع نظام نقاط ومؤقت زمني</p>
+            </div>
+          </div>
+          <span class="arrow">←</span>
+        </a>
+
+        <a href="https://github.com/kaisxb" target="_blank" class="proj-item">
+          <div class="proj-info">
+            <div class="proj-icon">🐙</div>
+            <div class="proj-text">
+              <h4>الملف الشخصي على GitHub</h4>
+              <p>استعراض كافة المستودعات والمشاريع المفتوحة</p>
+            </div>
+          </div>
+          <span class="arrow">←</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer">
+      تم التصميم والتطوير بكل إتقان ✨
     </div>
   </div>
 
