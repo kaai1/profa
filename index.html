@@ -1,15 +1,4 @@
-# Read the base64 string from index.html (which already has the user's embedded image)
-with open("index.html", "r", encoding="utf-8") as f:
-    text = f.read()
-
-import re
-match = re.search(r'data:image/png;base64,([A-Za-z0-9+/=]+)', text)
-if match:
-    b64_img = match.group(1)
-else:
-    b64_img = ""
-
-clean_bio_social_html = f"""<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
@@ -19,7 +8,7 @@ clean_bio_social_html = f"""<!DOCTYPE html>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
   <style>
-    :root {{
+    :root {
       --bg: #060812;
       --card-bg: rgba(15, 23, 42, 0.75);
       --card-border: rgba(255, 255, 255, 0.08);
@@ -28,16 +17,16 @@ clean_bio_social_html = f"""<!DOCTYPE html>
       --accent-pink: #ec4899;
       --text: #f8fafc;
       --text-muted: #94a3b8;
-    }}
+    }
 
-    * {{
+    * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
       font-family: 'Tajawal', sans-serif;
-    }}
+    }
 
-    body {{
+    body {
       background-color: var(--bg);
       background-image: 
         radial-gradient(circle at 15% 15%, rgba(56, 189, 248, 0.16) 0%, transparent 45%),
@@ -48,9 +37,9 @@ clean_bio_social_html = f"""<!DOCTYPE html>
       justify-content: center;
       align-items: center;
       padding: 2.5rem 1rem;
-    }}
+    }
 
-    .profile-card {{
+    .profile-card {
       background: var(--card-bg);
       backdrop-filter: blur(24px);
       -webkit-backdrop-filter: blur(24px);
@@ -61,22 +50,21 @@ clean_bio_social_html = f"""<!DOCTYPE html>
       padding: 3rem 2rem 2.5rem;
       box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.7), 0 0 35px rgba(56, 189, 248, 0.1);
       animation: fadeIn 0.8s ease-out;
-    }}
+    }
 
-    @keyframes fadeIn {{
-      from {{ opacity: 0; transform: translateY(20px); }}
-      to {{ opacity: 1; transform: translateY(0); }}
-    }}
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-    /* الصورة والهالة */
-    .avatar-wrapper {{
+    .avatar-wrapper {
       position: relative;
       width: 130px;
       height: 130px;
       margin: 0 auto 1.5rem;
-    }}
+    }
 
-    .avatar-ring {{
+    .avatar-ring {
       position: absolute;
       inset: -5px;
       border-radius: 50%;
@@ -84,13 +72,13 @@ clean_bio_social_html = f"""<!DOCTYPE html>
       animation: spin 7s linear infinite;
       filter: blur(6px);
       opacity: 0.85;
-    }}
+    }
 
-    @keyframes spin {{
-      100% {{ transform: rotate(360deg); }}
-    }}
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
+    }
 
-    .avatar-img {{
+    .avatar-img {
       position: relative;
       width: 100%;
       height: 100%;
@@ -99,9 +87,9 @@ clean_bio_social_html = f"""<!DOCTYPE html>
       display: block;
       border: 3px solid rgba(255, 255, 255, 0.2);
       background: #0f172a;
-    }}
+    }
 
-    .status-badge {{
+    .status-badge {
       position: absolute;
       bottom: 6px;
       left: 8px;
@@ -112,15 +100,14 @@ clean_bio_social_html = f"""<!DOCTYPE html>
       border-radius: 50%;
       box-shadow: 0 0 12px #10b981;
       z-index: 2;
-    }}
+    }
 
-    /* الاسم والنبذة */
-    .profile-info {{
+    .profile-info {
       text-align: center;
       margin-bottom: 2rem;
-    }}
+    }
 
-    .name {{
+    .name {
       font-size: 2.4rem;
       font-weight: 900;
       letter-spacing: 0.5px;
@@ -128,9 +115,9 @@ clean_bio_social_html = f"""<!DOCTYPE html>
       background: linear-gradient(135deg, #ffffff, #cbd5e1);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-    }}
+    }
 
-    .handle {{
+    .handle {
       display: inline-block;
       direction: ltr;
       color: var(--primary);
@@ -141,9 +128,9 @@ clean_bio_social_html = f"""<!DOCTYPE html>
       padding: 0.35rem 0.95rem;
       border-radius: 50px;
       margin-bottom: 1.2rem;
-    }}
+    }
 
-    .bio-box {{
+    .bio-box {
       background: rgba(255, 255, 255, 0.02);
       border: 1px solid var(--card-border);
       padding: 1.2rem 1.4rem;
@@ -152,10 +139,9 @@ clean_bio_social_html = f"""<!DOCTYPE html>
       font-size: 1.05rem;
       line-height: 1.7;
       text-align: center;
-    }}
+    }
 
-    /* قسم التواصل */
-    .section-title {{
+    .section-title {
       font-size: 0.95rem;
       font-weight: 800;
       color: var(--text-muted);
@@ -163,16 +149,16 @@ clean_bio_social_html = f"""<!DOCTYPE html>
       display: flex;
       align-items: center;
       gap: 0.5rem;
-    }}
+    }
 
-    .links-stack {{
+    .links-stack {
       display: flex;
       flex-direction: column;
       gap: 0.85rem;
       margin-bottom: 2rem;
-    }}
+    }
 
-    .social-link {{
+    .social-link {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -186,9 +172,9 @@ clean_bio_social_html = f"""<!DOCTYPE html>
       transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
       position: relative;
       overflow: hidden;
-    }}
+    }
 
-    .social-link::before {{
+    .social-link::before {
       content: '';
       position: absolute;
       top: 0;
@@ -198,41 +184,41 @@ clean_bio_social_html = f"""<!DOCTYPE html>
       opacity: 0;
       transition: opacity 0.25s ease;
       z-index: 0;
-    }}
+    }
 
-    .social-link:hover {{
+    .social-link:hover {
       transform: translateY(-3px) scale(1.01);
       box-shadow: 0 12px 25px -8px rgba(0, 0, 0, 0.6);
-    }}
+    }
 
-    .social-link:hover::before {{
+    .social-link:hover::before {
       opacity: 1;
-    }}
+    }
 
-    .link-tiktok:hover {{ border-color: #00f2fe; }}
-    .link-tiktok::before {{ background: linear-gradient(90deg, rgba(0, 242, 254, 0.15), rgba(254, 44, 85, 0.15)); }}
+    .link-tiktok:hover { border-color: #00f2fe; }
+    .link-tiktok::before { background: linear-gradient(90deg, rgba(0, 242, 254, 0.15), rgba(254, 44, 85, 0.15)); }
 
-    .link-snapchat:hover {{ border-color: #fffc00; }}
-    .link-snapchat::before {{ background: linear-gradient(90deg, rgba(255, 252, 0, 0.12), transparent); }}
+    .link-snapchat:hover { border-color: #fffc00; }
+    .link-snapchat::before { background: linear-gradient(90deg, rgba(255, 252, 0, 0.12), transparent); }
 
-    .link-instagram:hover {{ border-color: #e1306c; }}
-    .link-instagram::before {{ background: linear-gradient(90deg, rgba(225, 48, 108, 0.15), rgba(131, 58, 180, 0.15)); }}
+    .link-instagram:hover { border-color: #e1306c; }
+    .link-instagram::before { background: linear-gradient(90deg, rgba(225, 48, 108, 0.15), rgba(131, 58, 180, 0.15)); }
 
-    .link-discord:hover {{ border-color: #5865f2; }}
-    .link-discord::before {{ background: linear-gradient(90deg, rgba(88, 101, 242, 0.15), transparent); }}
+    .link-discord:hover { border-color: #5865f2; }
+    .link-discord::before { background: linear-gradient(90deg, rgba(88, 101, 242, 0.15), transparent); }
 
-    .link-x:hover {{ border-color: #ffffff; }}
-    .link-x::before {{ background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), transparent); }}
+    .link-x:hover { border-color: #ffffff; }
+    .link-x::before { background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), transparent); }
 
-    .link-content {{
+    .link-content {
       display: flex;
       align-items: center;
       gap: 1rem;
       position: relative;
       z-index: 1;
-    }}
+    }
 
-    .icon-box {{
+    .icon-box {
       width: 44px;
       height: 44px;
       display: flex;
@@ -242,50 +228,48 @@ clean_bio_social_html = f"""<!DOCTYPE html>
       border-radius: 14px;
       border: 1px solid var(--card-border);
       font-size: 1.35rem;
-    }}
+    }
 
-    .link-text h4 {{
+    .link-text h4 {
       font-size: 1.05rem;
       font-weight: 800;
       margin-bottom: 0.15rem;
-    }}
+    }
 
-    .link-text p {{
+    .link-text p {
       font-size: 0.82rem;
       color: var(--text-muted);
-    }}
+    }
 
-    .arrow-icon {{
+    .arrow-icon {
       position: relative;
       z-index: 1;
       color: var(--text-muted);
       font-size: 1.25rem;
       transition: transform 0.25s ease, color 0.25s ease;
-    }}
+    }
 
-    .social-link:hover .arrow-icon {{
+    .social-link:hover .arrow-icon {
       transform: translateX(-5px);
       color: #fff;
-    }}
+    }
 
-    .footer {{
+    .footer {
       text-align: center;
       font-size: 0.85rem;
       color: var(--text-muted);
-    }}
+    }
   </style>
 </head>
 <body>
 
   <div class="profile-card">
-    <!-- الصورة الشخصية مع التأثير -->
     <div class="avatar-wrapper">
       <div class="avatar-ring"></div>
-      <img src="data:image/png;base64,{b64_img}" alt="Kai" class="avatar-img">
+      <img src="avatar.jpg" alt="Kai" class="avatar-img">
       <div class="status-badge" title="متصل"></div>
     </div>
 
-    <!-- بطاقة الاسم والنبذة فقط -->
     <div class="profile-info">
       <h1 class="name">Kai</h1>
       <span class="handle">@kaisxb</span>
@@ -294,11 +278,9 @@ clean_bio_social_html = f"""<!DOCTYPE html>
       </div>
     </div>
 
-    <!-- شبكات التواصل الاجتماعي فقط -->
     <div class="section-title">🌐 حساباتي الرسمية</div>
     <div class="links-stack">
 
-      <!-- TikTok -->
       <a href="https://tiktok.com/@kaisxb" target="_blank" class="social-link link-tiktok">
         <div class="link-content">
           <div class="icon-box">🎬</div>
@@ -310,7 +292,6 @@ clean_bio_social_html = f"""<!DOCTYPE html>
         <span class="arrow-icon">←</span>
       </a>
 
-      <!-- Snapchat -->
       <a href="https://snapchat.com/add/kaisxb" target="_blank" class="social-link link-snapchat">
         <div class="link-content">
           <div class="icon-box">👻</div>
@@ -322,7 +303,6 @@ clean_bio_social_html = f"""<!DOCTYPE html>
         <span class="arrow-icon">←</span>
       </a>
 
-      <!-- Instagram -->
       <a href="https://instagram.com/kaisxb" target="_blank" class="social-link link-instagram">
         <div class="link-content">
           <div class="icon-box">📸</div>
@@ -334,7 +314,6 @@ clean_bio_social_html = f"""<!DOCTYPE html>
         <span class="arrow-icon">←</span>
       </a>
 
-      <!-- Discord -->
       <a href="https://discord.com" target="_blank" class="social-link link-discord">
         <div class="link-content">
           <div class="icon-box">💬</div>
@@ -346,7 +325,6 @@ clean_bio_social_html = f"""<!DOCTYPE html>
         <span class="arrow-icon">←</span>
       </a>
 
-      <!-- X -->
       <a href="https://x.com/kaisxb" target="_blank" class="social-link link-x">
         <div class="link-content">
           <div class="icon-box">𝕏</div>
@@ -367,9 +345,3 @@ clean_bio_social_html = f"""<!DOCTYPE html>
 
 </body>
 </html>
-"""
-
-with open("index.html", "w", encoding="utf-8") as f:
-    f.write(clean_bio_social_html)
-
-print("Saved clean bio + social site to index.html successfully.")
