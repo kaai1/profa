@@ -55,40 +55,46 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
+    /* إطار الصورة الدائري المتوهج */
     .avatar-wrapper {
       position: relative;
-      width: 130px;
-      height: 130px;
+      width: 135px;
+      height: 135px;
       margin: 0 auto 1.4rem;
     }
 
     .avatar-glow {
       position: absolute;
-      inset: -4px;
-      border-radius: 28px;
-      background: linear-gradient(135deg, #ffffff, #555555, #ffffff);
-      filter: blur(8px);
-      opacity: 0.6;
+      inset: -5px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ffffff, #444444, #ffffff);
+      animation: spin 8s linear infinite;
+      filter: blur(6px);
+      opacity: 0.65;
+    }
+
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
     }
 
     .avatar-img {
       position: relative;
       width: 100%;
       height: 100%;
-      border-radius: 24px;
+      border-radius: 50%;
       object-fit: cover;
       object-position: center;
       display: block;
-      border: 2px solid rgba(255, 255, 255, 0.4);
+      border: 2.5px solid rgba(255, 255, 255, 0.45);
       background: #151515;
     }
 
     .status-badge {
       position: absolute;
-      bottom: -4px;
-      left: -4px;
-      width: 20px;
-      height: 20px;
+      bottom: 4px;
+      left: 6px;
+      width: 18px;
+      height: 18px;
       background: #ffffff;
       border: 3.5px solid #000000;
       border-radius: 50%;
